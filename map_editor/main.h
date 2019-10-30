@@ -17,6 +17,7 @@
 
 #define HELP_TXT  "Save : s\nQuit (no save) : Esc\
                   \nHide this panel : h\
+                  \nCopy hover : c\
                   \n- pencil > colliders : 1\
                   \n+ pencil > colliders : 2\
                   \n- hover > colliders : 3\
@@ -37,8 +38,5 @@
 
 #define HEIGHT 360
 #define WIDTH 640
-
-
-
 
 #endif // MAIN_H_INCLUDED

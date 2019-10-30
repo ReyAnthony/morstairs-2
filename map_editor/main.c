@@ -115,6 +115,9 @@ int main ( int argc, char** argv )
                     else if (event.key.keysym.sym == SDLK_SPACE) {
                         MAPED_change_tile_at_cursor();
                     }
+                    else if (event.key.keysym.sym == SDLK_c) {
+                        MAPED_change_player_tile(MAPED_get_hover_tile());
+                    }
                     else if(event.key.keysym.sym == SDLK_LEFT) {
                         MAP_move(WEST);
                     }

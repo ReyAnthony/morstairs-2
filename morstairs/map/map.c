@@ -5,7 +5,6 @@
 #define ANIM_FRAME_MS 120
 #define TILE_MAX 65535
 
-
 //SHOULD MOVE THE NPCS TO SOMEWHERE ELSE
 //THEY CAN'T BE A PART OF THE MAP
 //MAYBE A LAYER ?
@@ -93,7 +92,7 @@ int MAP_init(char* tileset_file, char* map_file,
 
     has_collisions = SUCCESS;
     show_collisions = FAILURE;
-    player_tile = 332;
+    player_tile = 284;
     return SUCCESS;
 }
 
@@ -460,7 +459,7 @@ static Point to_screen_space(Uint32 map_x, Uint32 map_y) {
 
 static Point get_top_left_corner_of_screen_as_map_coordinates() {
     Point p;
-    p.x = (player_pos.x) - (width/2)/tile_size ;
+    p.x = (player_pos.x) - (width/2)/tile_size;
     p.y = (player_pos.y) - (height/2)/tile_size;
      if(p.x < 0) {
         p.x = 0;
@@ -508,8 +507,8 @@ static void draw_map(SDL_Surface* screen) {
     Point p = get_top_left_corner_of_screen_as_map_coordinates();
     Point limits = get_bottom_right_corner_of_screen_as_map_coordinates();
 
-    for(x = p.x; x <= limits.x; x++) {
-        for(y = p.y; y <= limits.y; y++) {
+    for(x = p.x; x < limits.x; x++) {
+        for(y = p.y; y < limits.y; y++) {
             Tile tile = map.data[y][x];
             Point p2 = to_screen_space(x, y);
             SDL_Rect r = { .w = tile_size, .h = tile_size, .x = p2.x, .y = p2.y};
