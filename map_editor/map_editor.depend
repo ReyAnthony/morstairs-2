@@ -1,0 +1,352 @@
+# depslib dependency file v1.0
+1572290289 source:c:\users\anthony\desktop\morstairs_project\map_editor\text.c
+	"text.h"
+
+1572290109 c:\users\anthony\desktop\morstairs_project\map_editor\text.h
+	"SDL/SDL.h"
+
+1325738639 c:\mingw\include\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1326110987 c:\mingw\include\sdl\sdl_config.h
+	"SDL_platform.h"
+	"SDL_config_dreamcast.h"
+	"SDL_config_macos.h"
+	"SDL_config_macosx.h"
+	"SDL_config_symbian.h"
+	"SDL_config_win32.h"
+	"SDL_config_os2.h"
+	"SDL_config_minimal.h"
+
+1325738639 c:\mingw\include\sdl\sdl_platform.h
+
+1326110994 c:\mingw\include\sdl\sdl_config_win32.h
+	"SDL_platform.h"
+
+1562429450 c:\mingw\include\sys\types.h
+	<_mingw.h>
+	<stddef.h>
+
+1562429450 c:\mingw\include\_mingw.h
+	<msvcrtver.h>
+	<w32api.h>
+	<features.h>
+
+1562429450 c:\mingw\include\msvcrtver.h
+	<_mingw.h>
+
+1562429462 c:\mingw\include\w32api.h
+	<sdkddkver.h>
+
+1562429462 c:\mingw\include\sdkddkver.h
+
+1571676088 c:\mingw\include\features.h
+
+1562429450 c:\mingw\include\stdio.h
+	<_mingw.h>
+	<stddef.h>
+	"sys/types.h"
+	"stdarg.h"
+	<locale.h>
+
+1562429450 c:\mingw\include\locale.h
+	<_mingw.h>
+	<stddef.h>
+
+1562429450 c:\mingw\include\stdlib.h
+	<_mingw.h>
+	<stddef.h>
+	<locale.h>
+	"alloca.h"
+
+1562429450 c:\mingw\include\alloca.h
+	<_mingw.h>
+	<stddef.h>
+
+1562429450 c:\mingw\include\malloc.h
+	<stdlib.h>
+	"alloca.h"
+
+1562429450 c:\mingw\include\memory.h
+	<string.h>
+
+1562429450 c:\mingw\include\string.h
+	<_mingw.h>
+	<stddef.h>
+	<strings.h>
+	"strings.h"
+	"wchar.h"
+
+1562429450 c:\mingw\include\strings.h
+	<_mingw.h>
+	<stddef.h>
+
+1562429450 c:\mingw\include\wchar.h
+	<_mingw.h>
+	<wctype.h>
+	<sys/types.h>
+	"stdio.h"
+	"stdlib.h"
+	"direct.h"
+	"sys/stat.h"
+	"conio.h"
+	"io.h"
+	"time.h"
+	"locale.h"
+	"process.h"
+
+1562429450 c:\mingw\include\wctype.h
+	<_mingw.h>
+	<stddef.h>
+
+1562429450 c:\mingw\include\direct.h
+	"dos.h"
+
+1562429450 c:\mingw\include\dos.h
+	"io.h"
+
+1562429450 c:\mingw\include\io.h
+	<_mingw.h>
+	<sys/types.h>
+	"stdint.h"
+
+1562429450 c:\mingw\include\stdint.h
+	<_mingw.h>
+	<stddef.h>
+
+1562429450 c:\mingw\include\sys\stat.h
+	<sys/types.h>
+
+1562429450 c:\mingw\include\conio.h
+	<_mingw.h>
+	<stddef.h>
+
+1562429450 c:\mingw\include\time.h
+	<sys/types.h>
+	<_mingw.h>
+	<stddef.h>
+
+1562429450 c:\mingw\include\process.h
+	<_mingw.h>
+	<sys/types.h>
+	"stdint.h"
+
+1562429450 c:\mingw\include\inttypes.h
+	<_mingw.h>
+	<stdint.h>
+	<stddef.h>
+
+1562429450 c:\mingw\include\ctype.h
+	<_mingw.h>
+	"wctype.h"
+
+1475678472 c:\mingw\include\iconv.h
+	"iconv.h"
+	<stddef.h>
+	<errno.h>
+	<stddef.h>
+	<stdio.h>
+	<time.h>
+	<wchar.h>
+
+1562429450 c:\mingw\include\errno.h
+	<_mingw.h>
+	"ptw32_errno.h"
+
+1326111000 c:\mingw\include\sdl\begin_code.h
+
+1325738639 c:\mingw\include\sdl\close_code.h
+
+1325738639 c:\mingw\include\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_keysym.h
+
+1325738639 c:\mingw\include\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1325738639 c:\mingw\include\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325738639 c:\mingw\include\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1572438772 source:c:\users\anthony\desktop\morstairs_project\map_editor\main.c
+	"main.h"
+
+1572436877 source:c:\users\anthony\desktop\morstairs_project\morstairs\map\map.c
+	"map.h"
+
+1572431455 c:\users\anthony\desktop\morstairs_project\morstairs\map\map.h
+	"SDL/SDL.h"
+
+1572427237 source:c:\users\anthony\desktop\morstairs_project\morstairs\text\text.c
+	"text.h"
+
+1572360524 c:\users\anthony\desktop\morstairs_project\morstairs\text\text.h
+	"SDL/SDL.h"
+
+1572435302 c:\users\anthony\desktop\morstairs_project\morstairs\map\map_editor.h
+	"map.h"
+
+1572438511 c:\users\anthony\desktop\morstairs_project\map_editor\main.h
+	<stdlib.h>
+	<SDL/SDL.h>
+	<string.h>
+	"../morstairs/text/text.h"
+	"../morstairs/map/map_editor.h"
+

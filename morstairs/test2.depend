@@ -1,0 +1,134 @@
+# depslib dependency file v1.0
+1571765944 source:c:\users\anthony\desktop\test2\main.c
+	<kos.h>
+	<arch/gdb.h>
+	"game.h"
+	<time.h>
+
+1571762013 c:\users\anthony\desktop\test2\paths.h
+
+1571697855 c:\users\anthony\desktop\test2\constants.h
+
+1571711231 source:c:\users\anthony\desktop\test2\error_management.c
+	"error_management.h"
+
+1571711240 c:\users\anthony\desktop\test2\error_management.h
+	<arch/arch.h>
+	<stdlib.h>
+	<stdio.h>
+
+1571854336 source:c:\users\anthony\desktop\test2\game.c
+	"game.h"
+	"gamep.h"
+
+1571753253 c:\users\anthony\desktop\test2\game.h
+	<stdio.h>
+	<stdlib.h>
+	"SDL/SDL.h"
+	"error_management.h"
+	"paths.h"
+	"constants.h"
+	"text.h"
+
+1571781441 c:\users\anthony\desktop\test2\gamep.h
+
+1571763735 source:c:\users\anthony\desktop\test2\text.c
+	"text.h"
+
+1571756955 c:\users\anthony\desktop\test2\text.h
+	"SDL/SDL.h"
+	"error_management.h"
+
+1571711231 source:c:\users\anthony\desktop\morstairs\error_management.c
+	"error_management.h"
+
+1571711240 c:\users\anthony\desktop\morstairs\error_management.h
+	<arch/arch.h>
+	<stdlib.h>
+	<stdio.h>
+
+1571854336 source:c:\users\anthony\desktop\morstairs\game.c
+	"game.h"
+	"gamep.h"
+
+1571753253 c:\users\anthony\desktop\morstairs\game.h
+	<stdio.h>
+	<stdlib.h>
+	"SDL/SDL.h"
+	"error_management.h"
+	"paths.h"
+	"constants.h"
+	"text.h"
+
+1571762013 c:\users\anthony\desktop\morstairs\paths.h
+
+1571697855 c:\users\anthony\desktop\morstairs\constants.h
+
+1571756955 c:\users\anthony\desktop\morstairs\text.h
+	"SDL/SDL.h"
+	"error_management.h"
+
+1571781441 c:\users\anthony\desktop\morstairs\gamep.h
+
+1571765944 source:c:\users\anthony\desktop\morstairs\main.c
+	<kos.h>
+	<arch/gdb.h>
+	"game.h"
+	<time.h>
+
+1571763735 source:c:\users\anthony\desktop\morstairs\text.c
+	"text.h"
+
+1572431687 source:c:\users\anthony\desktop\morstairs_project\morstairs\game.c
+	"game.h"
+
+1572308299 c:\users\anthony\desktop\morstairs_project\morstairs\game.h
+	<stdio.h>
+	<stdlib.h>
+	"SDL/SDL.h"
+	"paths.h"
+	"constants.h"
+	"text/text.h"
+	"map/map.h"
+
+1571930512 c:\users\anthony\desktop\morstairs_project\morstairs\error_management.h
+	<stdlib.h>
+	<stdio.h>
+
+1572359750 c:\users\anthony\desktop\morstairs_project\morstairs\paths.h
+
+1572455303 c:\users\anthony\desktop\morstairs_project\morstairs\constants.h
+
+1572296733 c:\users\anthony\desktop\morstairs_project\morstairs\text.h
+	"SDL/SDL.h"
+
+1572296153 c:\users\anthony\desktop\morstairs_project\morstairs\gamep.h
+
+1572292208 source:c:\users\anthony\desktop\morstairs_project\morstairs\text.c
+	"text.h"
+
+1571930067 source:c:\users\anthony\desktop\morstairs_project\morstairs\error_management.c
+	"error_management.h"
+
+1572310664 source:c:\users\anthony\desktop\morstairs_project\morstairs\main.c
+	<kos.h>
+	<arch/arch.h>
+	<arch/gdb.h>
+	"game.h"
+	<time.h>
+
+1572455287 source:c:\users\anthony\desktop\morstairs_project\morstairs\map\map.c
+	"map.h"
+
+1572431455 c:\users\anthony\desktop\morstairs_project\morstairs\map\map.h
+	"SDL/SDL.h"
+
+1572360524 c:\users\anthony\desktop\morstairs_project\morstairs\text\text.h
+	"SDL/SDL.h"
+
+1572427237 source:c:\users\anthony\desktop\morstairs_project\morstairs\text\text.c
+	"text.h"
+
+1572353449 c:\users\anthony\desktop\morstairs_project\morstairs\map\map_editor.h
+	"map.h"
+
