@@ -4,11 +4,13 @@
 #include <stdlib.h>
 #include <SDL/SDL.h>
 #include <string.h>
+#include "tinyfiledialogs/tinyfiledialogs.h"
 #include "../morstairs/text/text.h"
 #include "../morstairs/map/map_editor.h"
 
-#define MAP_IN "../morstairs/romdisk/morstairs_city.map"
-#define MAP_OUT "../morstairs/romdisk/morstairs_city.map"
+
+#define MAP_IN "../morstairs/romdisk/map.map"
+#define MAP_OUT "../morstairs/romdisk/map.map"
 #define COL_IN "data/colliders.col"
 #define COL_OUT "../morstairs/romdisk/colliders.col"
 
@@ -18,6 +20,7 @@
 #define HELP_TXT  "Save : s\nQuit (no save) : Esc\
                   \nHide this panel : h\
                   \nCopy hover : c\
+                  \nLoad another map : r\
                   \n- pencil > colliders : 1\
                   \n+ pencil > colliders : 2\
                   \n- hover > colliders : 3\
@@ -33,7 +36,7 @@
 
 #define MSG_LIFETIME 1000
 
-#define HEIGHT 360
-#define WIDTH 640
+#define HEIGHT 600
+#define WIDTH 1000
 
 #endif // MAIN_H_INCLUDED

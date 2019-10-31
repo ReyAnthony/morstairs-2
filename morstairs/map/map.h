@@ -26,5 +26,6 @@ int  MAP_init(const char* tileset_file, const char* map_file,
 void MAP_set_position(MAP_Point new_position);
 void MAP_quit();
 void MAP_add_event_callback(void (*event)(), MAP_Point p);
+void MAP_load_another(const char* map_file, MAP_Point new_position);
 
 #endif // MAP_H_INCLUDED

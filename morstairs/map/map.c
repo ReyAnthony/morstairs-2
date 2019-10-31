@@ -108,6 +108,13 @@ int MAP_init(const char* tileset_file, const char* map_file,
     return SUCCESS;
 }
 
+void MAP_load_another(const char* map_file, MAP_Point position) {
+    memset(&map, 0, sizeof(Map));
+    memset(&events, 0, sizeof(Events));
+    load_map(map_file);
+    MAP_set_position(position);
+}
+
 void MAP_quit() {
     SDL_FreeSurface(tileset);
     memset(&colliders, 0, sizeof(Colliders));

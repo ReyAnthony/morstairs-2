@@ -43,7 +43,7 @@ int TEXT_init(char* charset, Uint8 char_height, Uint8 char_width) {
         return FAILURE;
     }
     //max size should be parameterized
-    surface = SDL_CreateRGBSurface(SDL_HWSURFACE, 320, 240, 16, 0, 0, 0, 0);
+    surface = SDL_CreateRGBSurface(SDL_HWSURFACE, 640, 480, 16, 0, 0, 0, 0);
     SDL_SetColorKey(surface, SDL_SRCCOLORKEY, SDL_MapRGB(surface->format, 0, 0, 0));
     return SUCCESS;
 }

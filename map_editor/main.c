@@ -11,6 +11,12 @@ static int show_help = 1;
 static Message most_recent_message = { .format_string = "", .arg = NULL, .current_lifetime = 0};
 static void update_messages();
 static void save();
+static char* open_file = NULL;
+static char** filters = {"*.map"};
+
+static void load_map_dialog() {
+    open_file = tinyfd_openFileDialog("Choose map file", "./", 0, filters, "map files", 0);
+}
 
 int main ( int argc, char** argv )
 {
@@ -18,10 +24,16 @@ int main ( int argc, char** argv )
     SDL_EnableKeyRepeat(100, 100);
     SDL_ShowCursor(0);
 
-    if(!TEXT_init("data/font.bmp", 8, 8)) {
+    if(!TEXT_init("data/font.bmp", 16, 16)) {
         return EXIT_FAILURE;
     }
-    if(!MAP_init("data/ultima.bmp", MAP_IN, COL_IN, ANIM_IN, 32,  WIDTH, HEIGHT)) {
+
+    load_map_dialog();
+    if(open_file == NULL) {
+        exit(-1);
+    }
+
+    if(!MAP_init("data/ultima.bmp", open_file, COL_IN, ANIM_IN, 64,  WIDTH, HEIGHT)) {
         return EXIT_FAILURE;
     }
     MAPED_init(256, 256);
@@ -29,9 +41,9 @@ int main ( int argc, char** argv )
 
 
     atexit(SDL_Quit);
-    SDL_Surface* screen = SDL_SetVideoMode(WIDTH, HEIGHT, 16, SDL_HWSURFACE|SDL_FULLSCREEN|SDL_DOUBLEBUF);
-    SDL_Rect message_pos = {.x = 0, .y = HEIGHT - 32};
-    SDL_Rect help_pos = {.x = WIDTH - 200, .y = HEIGHT - 120};
+    SDL_Surface* screen = SDL_SetVideoMode(WIDTH, HEIGHT, 16, SDL_HWSURFACE|SDL_DOUBLEBUF);
+    SDL_Rect message_pos = {.x = 0, .y = HEIGHT - 64};
+    SDL_Rect help_pos = {.x = WIDTH - 400, .y = HEIGHT - 240};
 
     int done = 0;
     while (!done)
@@ -49,7 +61,9 @@ int main ( int argc, char** argv )
             case SDL_KEYDOWN:
                 {
                     if (event.key.keysym.sym == SDLK_ESCAPE) {
-                        done = 1;
+                        if(tinyfd_messageBox("Sure to quit ?", "If not saved earlier, then nothing is saved", "okcancel", "yesno", 1)) {
+                            done = 1;
+                        }
                     }
                     else if (event.key.keysym.sym == SDLK_s) {
                         save();
@@ -117,6 +131,13 @@ int main ( int argc, char** argv )
                     }
                     else if (event.key.keysym.sym == SDLK_c) {
                         MAPED_change_player_tile(MAPED_get_hover_tile());
+                        current_tile = MAPED_get_hover_tile();
+                    }
+                    else if (event.key.keysym.sym == SDLK_r) {
+                        load_map_dialog();
+                        if(open_file != NULL) {
+                            MAP_load_another(open_file, MAPED_get_player_position());
+                        }
                     }
                     else if(event.key.keysym.sym == SDLK_LEFT) {
                         MAP_move(WEST);
@@ -174,6 +195,6 @@ static void update_messages() {
 }
 
 static void save() {
-    MAPED_save_all_modifications(MAP_IN, COL_IN, ANIM_IN);
-    MAPED_save_all_modifications(MAP_OUT, COL_OUT, ANIM_OUT);
+    MAPED_save_all_modifications(open_file, COL_IN, ANIM_IN);
+    MAPED_save_all_modifications(open_file, COL_OUT, ANIM_OUT);
 }
