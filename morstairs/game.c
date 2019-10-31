@@ -49,8 +49,6 @@ void GAME_quit() {
 
 void GAME_start(SDL_Event* event, SDL_Surface* screen) {
 
-    AUDIO_play("rd/music.ogg", 1);
-
     while(1) {
         game_update(event);
         game_draw(screen);

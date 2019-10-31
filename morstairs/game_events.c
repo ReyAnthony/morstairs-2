@@ -17,16 +17,16 @@ static void draw_curtain();
 static SDL_Surface* screen;
 
 static void town_music() {
-    AUDIO_play("rd/stone.ogg", 1);
+    AUDIO_play(STONES, 1);
 }
 
 static void dungeon_music() {
-    AUDIO_play("rd/dungeon.ogg", 1);
+    AUDIO_play(DUNGEON, 1);
 }
 
 
 static void draw_curtain() {
-    int y;
+    //int y;
     //for(y = 0; y < HEIGHT; y+= 10 ) {
      //   SDL_Rect r = { .w = WIDTH, .h = y, .x = 0, .y = 0};
         //SDL_FillRect(screen, &r, 0);
@@ -195,5 +195,5 @@ static void init_overworld_events() {
     MAP_add_event_callback(enter_town_of_forgevielle_from_left, p3);
     MAP_Point p4 = {.x = 27, .y = 7};
     MAP_add_event_callback(enter_town_of_forgevielle_from_down, p4);
-    AUDIO_play("rd/music.ogg", 1);
+    AUDIO_play(OVERWORLD, 1);
 }

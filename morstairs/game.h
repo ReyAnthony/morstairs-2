@@ -9,6 +9,7 @@
 #include "SDL/SDL.h"
 #include "paths.h"
 #include "constants.h"
+#include "game_events.h"
 #include "audio/audio.h"
 
 

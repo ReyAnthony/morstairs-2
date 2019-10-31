@@ -2,27 +2,14 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release" />
-	<File name="..\morstairs\map\map.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2842" topLine="87" />
+			<Cursor1 position="307" topLine="4" />
 		</Cursor>
-		<Folding>
-			<Collapse line="12" />
-			<Collapse line="19" />
-			<Collapse line="25" />
-			<Collapse line="32" />
-			<Collapse line="348" />
-			<Collapse line="368" />
-			<Collapse line="387" />
-			<Collapse line="403" />
-			<Collapse line="420" />
-			<Collapse line="431" />
-			<Collapse line="453" />
-		</Folding>
 	</File>
-	<File name="..\morstairs\map\map.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="648" topLine="9" />
+			<Cursor1 position="5940" topLine="20" />
 		</Cursor>
 	</File>
 	<File name="data\animated.ani" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -30,24 +17,33 @@
 			<Cursor1 position="1" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="..\morstairs\map\map_editor.h" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\morstairs\map\map.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="289" topLine="0" />
+			<Cursor1 position="648" topLine="9" />
 		</Cursor>
 	</File>
-	<File name="main.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\morstairs\map\map.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="245" topLine="7" />
+			<Cursor1 position="4963" topLine="182" />
 		</Cursor>
+		<Folding>
+			<Collapse line="334" />
+			<Collapse line="352" />
+			<Collapse line="372" />
+			<Collapse line="391" />
+			<Collapse line="407" />
+			<Collapse line="426" />
+			<Collapse line="435" />
+		</Folding>
 	</File>
-	<File name="..\morstairs\text\text.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\morstairs\text\text.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2637" topLine="69" />
 		</Cursor>
 	</File>
-	<File name="main.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\morstairs\map\map_editor.h" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="5940" topLine="20" />
+			<Cursor1 position="289" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
