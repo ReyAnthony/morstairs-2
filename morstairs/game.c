@@ -36,8 +36,7 @@ int GAME_init_engine() {
         return FAILURE;
     }
 
-    EVENTS_init_overworld();
-    //MAP_set_end_of_turn_callback(); //at the end of each turn, do this
+    MAP_extends_with_submodule(EVENTS_submodule_initializer);
     return SUCCESS;
 }
 

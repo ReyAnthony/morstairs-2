@@ -79,7 +79,7 @@
 1571763735 source:c:\users\anthony\desktop\morstairs\text.c
 	"text.h"
 
-1572532931 source:c:\users\anthony\desktop\morstairs_project\morstairs\game.c
+1572559529 source:c:\users\anthony\desktop\morstairs_project\morstairs\game.c
 	"game.h"
 
 1572530623 c:\users\anthony\desktop\morstairs_project\morstairs\game.h
@@ -97,7 +97,7 @@
 	<stdlib.h>
 	<stdio.h>
 
-1572532817 c:\users\anthony\desktop\morstairs_project\morstairs\paths.h
+1572549627 c:\users\anthony\desktop\morstairs_project\morstairs\paths.h
 
 1572524263 c:\users\anthony\desktop\morstairs_project\morstairs\constants.h
 
@@ -119,25 +119,26 @@
 	"game.h"
 	<time.h>
 
-1572537512 source:c:\users\anthony\desktop\morstairs_project\morstairs\map\map.c
+1572559344 source:c:\users\anthony\desktop\morstairs_project\morstairs\map\map.c
 	"map.h"
 
-1572537482 c:\users\anthony\desktop\morstairs_project\morstairs\map\map.h
+1572560304 c:\users\anthony\desktop\morstairs_project\morstairs\map\map.h
 	"SDL/SDL.h"
 
 1572360524 c:\users\anthony\desktop\morstairs_project\morstairs\text\text.h
 	"SDL/SDL.h"
 
-1572427237 source:c:\users\anthony\desktop\morstairs_project\morstairs\text\text.c
+1572550896 source:c:\users\anthony\desktop\morstairs_project\morstairs\text\text.c
 	"text.h"
 
-1572353449 c:\users\anthony\desktop\morstairs_project\morstairs\map\map_editor.h
+1572556026 c:\users\anthony\desktop\morstairs_project\morstairs\map\map_editor.h
 	"map.h"
 
-1572539838 source:c:\users\anthony\desktop\morstairs_project\morstairs\game_events.c
+1572560713 source:c:\users\anthony\desktop\morstairs_project\morstairs\game_events.c
 	"game_events.h"
+	"game_event_codegen.h"
 
-1572485820 c:\users\anthony\desktop\morstairs_project\morstairs\game_events.h
+1572560719 c:\users\anthony\desktop\morstairs_project\morstairs\game_events.h
 	"map/map.h"
 	"paths.h"
 	"constants.h"
@@ -151,4 +152,9 @@
 	<oggvorbis/sndoggvorbis.h>
 	<SDL/SDL.h>
 	<SDL/SDL_mixer.h>
+
+1572557751 source:c:\users\anthony\desktop\morstairs_project\morstairs\map\map_editor.c
+	"map_editor.h"
+
+1572560717 c:\users\anthony\desktop\morstairs_project\morstairs\game_event_codegen.h
 

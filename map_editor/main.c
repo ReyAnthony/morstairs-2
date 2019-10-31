@@ -23,6 +23,7 @@ int main ( int argc, char** argv )
     SDL_Init( SDL_INIT_VIDEO );
     SDL_EnableKeyRepeat(100, 100);
     SDL_ShowCursor(0);
+    SDL_putenv("SDL_VIDEO_WINDOW_POS=center");
 
     if(!TEXT_init("data/font.bmp", 16, 16)) {
         return EXIT_FAILURE;
@@ -36,9 +37,8 @@ int main ( int argc, char** argv )
     if(!MAP_init("data/ultima.bmp", open_file, COL_IN, ANIM_IN, 64,  WIDTH, HEIGHT)) {
         return EXIT_FAILURE;
     }
-    MAPED_init(256, 256);
+    MAP_extends_with_submodule(MAPED_submodule_initializer);
     current_tile = MAPED_get_player_tile();
-
 
     atexit(SDL_Quit);
     SDL_Surface* screen = SDL_SetVideoMode(WIDTH, HEIGHT, 16, SDL_HWSURFACE|SDL_DOUBLEBUF);

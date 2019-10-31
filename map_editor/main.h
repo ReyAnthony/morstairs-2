@@ -6,7 +6,7 @@
 #include <string.h>
 #include "tinyfiledialogs/tinyfiledialogs.h"
 #include "../morstairs/text/text.h"
-#include "../morstairs/map/map_editor.h"
+#include "map/map_editor.h"
 
 
 #define MAP_IN "../morstairs/romdisk/map.map"

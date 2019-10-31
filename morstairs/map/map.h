@@ -17,15 +17,58 @@ typedef enum dir_e {
     EAST
 } MAP_Directions ;
 
-//SHOULD ADD SOMETHING TO ADD AI FOES
-void MAP_move(MAP_Directions direction);
-void MAP_draw(SDL_Surface* screen, Uint32 delta_time);
+typedef struct map_t {
+    Uint32 width;
+    Uint32 height;
+    Tile data[256][256];
+} Map;
+
+typedef struct colliders_t {
+    Tile data[128];
+    Uint16 count;
+} Colliders;
+
+typedef struct animation_t {
+    Tile tile;
+    Uint8 frame_count;
+    Uint8 anim_index;
+    Uint32 anim_time;
+} Animation;
+
+typedef struct animated_t {
+    Animation data[32];
+    Uint16 count;
+} Animated;
+
+//Given to submodules
+typedef struct MAP_submodule_t {
+    Map* map;
+    MAP_Point* player_pos;
+    Colliders* colliders;
+    Animated* animated;
+    Tile* player_tile;
+    int* has_collisions;
+    int tile_size;
+
+    //API exposed to submodules
+    int (*is_blocking)(Tile t);
+} MAP_SubmodulePackage;
+
+typedef struct MAP_submodule_delegation_t {
+    void (*map_draw_delegate)(SDL_Rect r, SDL_Surface* screen, Tile t);
+    void (*player_draw_delegate)(SDL_Rect r, SDL_Surface* screen, Tile t);
+    void (*on_movement_delegate) (MAP_Point point);
+} MAP_SubmoduleDelegation;
+
 int  MAP_init(const char* tileset_file, const char* map_file,
                      const char* collision_file, const char* animation_file,
                      Uint8 ts, Uint32 width, Uint32 height);
-void MAP_set_position(MAP_Point new_position);
 void MAP_quit();
-void MAP_add_event_callback(void (*event)(), MAP_Point p);
+
+void MAP_move(MAP_Directions direction);
+void MAP_draw(SDL_Surface* screen, Uint32 delta_time);
+
 void MAP_load_another(const char* map_file, MAP_Point new_position);
+void MAP_extends_with_submodule(MAP_SubmoduleDelegation (*submodule_init)(MAP_SubmodulePackage)) ;
 
 #endif // MAP_H_INCLUDED

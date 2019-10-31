@@ -1,118 +1,55 @@
 #include "game_events.h"
 
-static void enter_town_of_morstairs();
+typedef struct event_t {
+    MAP_Point event_position;
+    void (*event)(void);
+} Event;
 
-static void enter_town_of_forgevielle_from_left();
-static void enter_town_of_forgevielle_from_down();
+typedef struct events_t {
+    Event data[255];
+    int count;
+} Events;
 
-static void go_into_dungeon();
-static void go_into_dungeon_from_overworld();
-static void go_from_dungeon_to_morstairs();
-static void go_from_dungeon_to_overworld();
+static void on_movement_delegate(MAP_Point p);
+static void add_event_callback(void (*event)(void), MAP_Point p);
+static void clear_events();
 
-static void go_overworld_from_morstairs();
-static void go_overworld_from_forgevielle_left();
-static void go_overworld_from_forgevielle_down();
+#include "game_event_codegen.h"
 
-#define MAP_SWAP(xx, yy, map)({ \
-    MAP_Point p = {.x = xx, .y = yy}; \
-    MAP_load_another(map, p);\
-});
+static void overworld_events();
+static Events events;
+static MAP_SubmodulePackage smp;
 
-#define TOWN\
-    AUDIO_play(STONES, 1);
+MAP_SubmoduleDelegation  EVENTS_submodule_initializer(MAP_SubmodulePackage submod) {
+    smp = submod;
 
-#define WORLD\
-    AUDIO_play(OVERWORLD, 1);
+    MAP_SubmoduleDelegation delegation =
+    {
+    .map_draw_delegate = NULL,
+    .player_draw_delegate = NULL,
+    .on_movement_delegate = on_movement_delegate
+    };
 
-#define DUNGEON_M\
-    AUDIO_play(DUNGEON, 1);
-
-#define DUNGEON_EVENTS()\
-    MAP_Point p2 = {.x = 16, .y = 3};\
-    MAP_add_event_callback(go_from_dungeon_to_morstairs, p2);\
-    MAP_Point p3 = {.x = 23, .y = 20};\
-    MAP_add_event_callback(go_from_dungeon_to_overworld, p3);\
-    DUNGEON_M
-
-#define MORSTAIRS_EVENTS()\
-    MAP_Point p2 = {.x = 11, .y = 9}; \
-    MAP_add_event_callback(go_overworld_from_morstairs, p2);\
-    MAP_Point p3 = {.x = 29, .y = 5};\
-    MAP_add_event_callback(go_into_dungeon, p3);\
-    TOWN
-
-
-#define FORGEVIELLE_EVENTS() \
-    MAP_Point p2 = {.x = 11, .y = 9};\
-    MAP_add_event_callback(go_overworld_from_forgevielle_left, p2);\
-    MAP_Point p3 = {.x = 19, .y = 15};\
-    MAP_add_event_callback(go_overworld_from_forgevielle_down, p3);\
-    TOWN
-
-#define OVERWORLD_EVENTS()\
-    MAP_Point pe = {.x = 17, .y = 5};\
-    MAP_add_event_callback(enter_town_of_morstairs, pe);\
-    MAP_Point p2 = {.x = 26, .y = 6};\
-    MAP_add_event_callback(enter_town_of_forgevielle_from_left, p2);\
-    MAP_Point p3 = {.x = 27, .y = 6};\
-    MAP_add_event_callback(enter_town_of_forgevielle_from_left, p3);\
-    MAP_Point p4 = {.x = 27, .y = 7};\
-    MAP_add_event_callback(enter_town_of_forgevielle_from_down, p4);\
-    MAP_Point p5 = {.x = 19, .y = 7};\
-    MAP_add_event_callback(go_into_dungeon_from_overworld, p5);\
-    WORLD
-
- void EVENTS_init_overworld() {
-    OVERWORLD_EVENTS()
- }
-
-static void go_overworld_from_morstairs(){
-    MAP_SWAP(17, 5, OVERWORLD_MAP_PATH)
-    OVERWORLD_EVENTS()
+    INIT_EVENTS
+    return delegation;
 }
 
-static void go_into_dungeon() {
-    MAP_SWAP(16, 3, DUNGEON_MAP_PATH)
-    DUNGEON_EVENTS()
+static void on_movement_delegate(MAP_Point p) {
+    int i = 0;
+    for(i=0; i < events.count; i++) {
+        if(events.data[i].event_position.x == p.x && events.data[i].event_position.y == p.y) {
+            events.data[i].event();
+            break;
+        }
+    }
 }
 
-static void go_from_dungeon_to_morstairs() {
-    MAP_SWAP(29, 5, MORSTAIRS_MAP_PATH)
-    MORSTAIRS_EVENTS()
+static void add_event_callback(void (*event)(void), MAP_Point p) {
+    events.data[events.count].event = event;
+    events.data[events.count].event_position = p;
+    events.count++;
 }
 
-static void enter_town_of_morstairs() {
-    MAP_SWAP(12, 9, MORSTAIRS_MAP_PATH)
-    MORSTAIRS_EVENTS()
-}
-
-static void go_overworld_from_forgevielle_down() {
-    MAP_SWAP(27, 7, OVERWORLD_MAP_PATH)
-    OVERWORLD_EVENTS()
-}
-
-static void go_overworld_from_forgevielle_left() {
-    MAP_SWAP(26, 6, OVERWORLD_MAP_PATH)
-    OVERWORLD_EVENTS()
-}
-
-static void enter_town_of_forgevielle_from_left() {
-    MAP_SWAP(12, 9, FORGEVIELLE_MAP_PATH)
-    FORGEVIELLE_EVENTS()
-}
-
-static void enter_town_of_forgevielle_from_down() {
-    MAP_SWAP(19, 14, FORGEVIELLE_MAP_PATH)
-    FORGEVIELLE_EVENTS()
-}
-
-static void go_from_dungeon_to_overworld() {
-    MAP_SWAP(19, 7, OVERWORLD_MAP_PATH)
-    OVERWORLD_EVENTS()
-}
-
-static void go_into_dungeon_from_overworld() {
-   MAP_SWAP(23, 20, DUNGEON_MAP_PATH)
-   DUNGEON_EVENTS()
+static void clear_events() {
+    memset(&events, 0, sizeof(Events));
 }

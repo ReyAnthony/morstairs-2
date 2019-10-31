@@ -6,6 +6,6 @@
 #include "constants.h"
 #include "audio/audio.h"
 
-void EVENTS_init_overworld();
+MAP_SubmoduleDelegation EVENTS_submodule_initializer(MAP_SubmodulePackage smp);
 
 #endif // GAME_EVENTS_H_INCLUDED

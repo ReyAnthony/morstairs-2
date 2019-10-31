@@ -42,7 +42,7 @@ int TEXT_init(char* charset, Uint8 char_height, Uint8 char_width) {
     if(surface != NULL) {
         return FAILURE;
     }
-    //max size should be parameterized
+    //max size should be parameterized (use memory of nothing on the DC)
     surface = SDL_CreateRGBSurface(SDL_HWSURFACE, 640, 480, 16, 0, 0, 0, 0);
     SDL_SetColorKey(surface, SDL_SRCCOLORKEY, SDL_MapRGB(surface->format, 0, 0, 0));
     return SUCCESS;
