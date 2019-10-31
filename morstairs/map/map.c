@@ -109,7 +109,7 @@ int MAP_init(const char* tileset_file, const char* map_file,
 }
 
 void MAP_quit() {
-    SDL_free(tileset);
+    SDL_FreeSurface(tileset);
     memset(&colliders, 0, sizeof(Colliders));
     memset(&map, 0, sizeof(Map));
     memset(&events, 0, sizeof(Events));
@@ -470,7 +470,7 @@ static MAP_Point to_screen_space(Uint32 map_x, Uint32 map_y) {
     MAP_Point p;
     p.x = width/2 - ((player_pos.x - map_x) * tile_size);
     p.y = height/2 - ((player_pos.y - map_y) * tile_size);
-    p.y -= 24; //hack for the wrong position
+    p.y -= 12; //hack for the wrong position
 
     if(p.x > width) {
         p.x = width;

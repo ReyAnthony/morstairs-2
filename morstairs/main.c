@@ -41,7 +41,7 @@ int main(int argc, char **argv) {
     screen = SDL_SetVideoMode(WIDTH,HEIGHT, 16, opts);
     #endif
     #ifdef PC
-    Uint32 opts = SDL_HWSURFACE|SDL_FULLSCREEN;
+    Uint32 opts = SDL_HWSURFACE;//|SDL_FULLSCREEN;
     screen = SDL_SetVideoMode(WIDTH,HEIGHT, 16 * 2, opts);
     #endif
 
