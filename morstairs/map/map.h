@@ -8,20 +8,23 @@ typedef Uint16 Tile;
 typedef struct point_t {
     int32_t x; // Signed
     int32_t y; // Signed
-} Point;
+} MAP_Point;
 
 typedef enum dir_e {
     NORTH,
     SOUTH,
     WEST,
     EAST
-} Directions ;
+} MAP_Directions ;
 
-void MAP_move(Directions direction);
+//SHOULD ADD SOMETHING TO ADD AI FOES
+void MAP_move(MAP_Directions direction);
 void MAP_draw(SDL_Surface* screen, Uint32 delta_time);
-int  MAP_init(char* tileset_file, char* map_file,
-                     char* collision_file, char* animation_file,
+int  MAP_init(const char* tileset_file, const char* map_file,
+                     const char* collision_file, const char* animation_file,
                      Uint8 ts, Uint32 width, Uint32 height);
+void MAP_set_position(MAP_Point new_position);
 void MAP_quit();
+void MAP_add_event_callback(void (*event)(), MAP_Point p);
 
 #endif // MAP_H_INCLUDED

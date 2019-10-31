@@ -1,12 +1,13 @@
 #ifndef CONSTANTS_H_INCLUDED
 #define CONSTANTS_H_INCLUDED
 
-#define WIDTH 320
-#define HEIGHT 240
-
 #define TILE_SIZE 32
+#define WIDTH 320
+#define HEIGHT 180
 
 #ifdef DC
+#define WIDTH 320
+#define HEIGHT 240
 #define DC_BUTTON_A 0
 #define DC_BUTTON_B 1
 #define DC_BUTTON_X 2

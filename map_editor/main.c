@@ -135,7 +135,7 @@ int main ( int argc, char** argv )
             }
         }
 
-        Point p = MAPED_get_player_position();
+        MAP_Point p = MAPED_get_player_position();
         SDL_BlitSurface(TEXT_blit_formatted("X : %d, Y: %d", p.x, p.y), NULL, screen, NULL);
         SDL_BlitSurface(TEXT_blit_formatted(most_recent_message.format_string,
                                             most_recent_message.arg),

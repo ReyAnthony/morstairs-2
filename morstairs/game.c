@@ -1,4 +1,5 @@
 #include "game.h"
+
 #define FAILURE 0
 #define SUCCESS 1
 #define BUTTON_REPEAT_DELAY_MS 150
@@ -17,7 +18,7 @@ static void game_update(SDL_Event* event);
 static Timer timer;
 static Uint32 repeat_time = 0;
 
-int init_game_engine() {
+int GAME_init_engine() {
 
     init_timer();
     if(!MAP_init(TILESET_PATH, OVERWORLD_MAP_PATH,
@@ -31,20 +32,29 @@ int init_game_engine() {
         return FAILURE;
     }
 
+    if(!AUDIO_init()) {
+        return FAILURE;
+    }
+
+    EVENTS_init_overworld();
+    //MAP_set_end_of_turn_callback(); //at the end of each turn, do this
     return SUCCESS;
 }
 
-void quit_game_engine() {
-
+void GAME_quit() {
+    AUDIO_quit();
     MAP_quit();
     TEXT_quit();
 }
 
-void start_game(SDL_Event* event, SDL_Surface* screen) {
+void GAME_start(SDL_Event* event, SDL_Surface* screen) {
+
+    AUDIO_play("rd/music.ogg", 1);
 
     while(1) {
         game_update(event);
         game_draw(screen);
+        SDL_Delay(10);
     }
 }
 

@@ -19,7 +19,7 @@ static SDL_Surface* screen;
 void exit_cleanup();
 void exit_cleanup() {
     SDL_FreeSurface(screen);
-    quit_game_engine();
+    GAME_quit();
 #ifdef DC
      arch_reboot(); //if we reboot we don't get the stats
 #endif // DC
@@ -48,10 +48,10 @@ int main(int argc, char **argv) {
     if(screen == NULL) {
         return 1;
     }
-    if(!init_game_engine()) {
+    if(!GAME_init_engine()) {
         return 1;
     }
     atexit(exit_cleanup);
-    start_game(&event, screen);
+    GAME_start(&event, screen);
     return 0;
 }

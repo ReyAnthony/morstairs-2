@@ -14,7 +14,7 @@ void MAPED_remove_1_frame_to_animation(Tile tile);
 void MAPED_add_1_frame_to_animation(Tile tile);
 int MAPED_save_all_modifications(char* map_file, char* collider_file, char* animation_file);
 
-Point MAPED_get_player_position();
+MAP_Point MAPED_get_player_position();
 Tile MAPED_get_hover_tile();
 Tile MAPED_get_player_tile();
 

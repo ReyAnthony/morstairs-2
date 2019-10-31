@@ -9,12 +9,14 @@
 #include "SDL/SDL.h"
 #include "paths.h"
 #include "constants.h"
+#include "audio/audio.h"
+
 
 #include "text/text.h"
 #include "map/map.h"
 
-void start_game();
-int init_game_engine();
-void quit_game_engine();
+void GAME_start();
+int GAME_init_engine();
+void GAME_quit();
 
 #endif // GAME_H_INCLUDED

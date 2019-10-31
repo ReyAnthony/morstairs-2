@@ -35,6 +35,16 @@ typedef struct animated_t {
     Uint16 count;
 } Animated;
 
+typedef struct event_t {
+    MAP_Point event_position;
+    void (*event)(void);
+} Event;
+
+typedef struct events_t {
+    Event data[255];
+    int count;
+} Events;
+
 static int init_tiles(SDL_Surface* tileset);
 static int load_map(char* map_file);
 static int load_colliders(char* collider_file);
@@ -42,20 +52,22 @@ static int load_animated(char* animated_file);
 
 static Uint8 is_blocking(Tile tile);
 static Tile get_animated_tile(Tile tile);
-static Point to_screen_space(Uint32 map_x, Uint32 map_y);
-static Point get_top_left_corner_of_screen_as_map_coordinates();
-static Point get_bottom_right_corner_of_screen_as_map_coordinates();
+static MAP_Point to_screen_space(Uint32 map_x, Uint32 map_y);
+static MAP_Point get_top_left_corner_of_screen_as_map_coordinates();
+static MAP_Point get_bottom_right_corner_of_screen_as_map_coordinates();
 static void update_animations(Uint32 delta_time);
 static void draw_map(SDL_Surface* screen);
 static void draw_player(SDL_Surface* screen);
+static void call_callback_event_if_at_point(MAP_Point p);
 
 static Animated animated;
 static Colliders colliders;
 static Map map;
-static Point player_pos = { .x = 15, .y = 5};
+static MAP_Point player_pos = { .x = 15, .y = 5};
 static SDL_Rect tiles[512];
 static SDL_Surface* tileset;
 static Tile player_tile;
+static Events events;
 
 static Uint8 tile_size;
 static Uint32 width;
@@ -65,8 +77,8 @@ static Uint32 height;
 static Uint8 has_collisions;
 static Uint8 show_collisions;
 
-int MAP_init(char* tileset_file, char* map_file,
-                     char* collision_file, char* animation_file,
+int MAP_init(const char* tileset_file, const char* map_file,
+                     const char* collision_file, const char* animation_file,
                      Uint8 ts, Uint32 w, Uint32 h) {
 
     tileset = SDL_LoadBMP(tileset_file);
@@ -98,6 +110,14 @@ int MAP_init(char* tileset_file, char* map_file,
 
 void MAP_quit() {
     SDL_free(tileset);
+    memset(&colliders, 0, sizeof(Colliders));
+    memset(&map, 0, sizeof(Map));
+    memset(&events, 0, sizeof(Events));
+    memset(&animated, 0, sizeof(Animated));
+}
+
+void MAP_set_position(MAP_Point new_position) {
+    player_pos = new_position;
 }
 
 void MAP_draw(SDL_Surface* screen, Uint32 delta_time) {
@@ -107,7 +127,7 @@ void MAP_draw(SDL_Surface* screen, Uint32 delta_time) {
     draw_player(screen);
 }
 
-void MAP_move(Directions direction) {
+void MAP_move(MAP_Directions direction) {
 
     switch(direction) {
     case NORTH:
@@ -169,6 +189,14 @@ void MAP_move(Directions direction) {
     default:
         break;
     }
+
+    call_callback_event_if_at_point(player_pos);
+}
+
+void MAP_add_event_callback(void (*event)(void), MAP_Point p) {
+    events.data[events.count].event = event;
+    events.data[events.count].event_position = p;
+    events.count++;
 }
 
 // Map editor
@@ -176,7 +204,7 @@ void MAPED_change_tile_at_cursor() {
     map.data[player_pos.y][player_pos.x] = player_tile;
 }
 
-Point MAPED_get_player_position() {
+MAP_Point MAPED_get_player_position() {
     return player_pos;
 }
 
@@ -281,7 +309,7 @@ void MAPED_unset_as_collider(Tile tile) {
 }
 
 Tile MAPED_get_hover_tile() {
-    Point p = player_pos;
+    MAP_Point p = player_pos;
     return map.data[p.y][p.x];
 }
 
@@ -438,10 +466,12 @@ static Uint8 is_blocking(Tile tile) {
     return FAILURE;
 }
 
-static Point to_screen_space(Uint32 map_x, Uint32 map_y) {
-    Point p;
-    p.x = width/2 - (player_pos.x - map_x) * tile_size;
-    p.y = height/2 - (player_pos.y - map_y) * tile_size;
+static MAP_Point to_screen_space(Uint32 map_x, Uint32 map_y) {
+    MAP_Point p;
+    p.x = width/2 - ((player_pos.x - map_x) * tile_size);
+    p.y = height/2 - ((player_pos.y - map_y) * tile_size);
+    p.y -= 24; //hack for the wrong position
+
     if(p.x > width) {
         p.x = width;
     }
@@ -457,10 +487,10 @@ static Point to_screen_space(Uint32 map_x, Uint32 map_y) {
     return p;
 }
 
-static Point get_top_left_corner_of_screen_as_map_coordinates() {
-    Point p;
-    p.x = (player_pos.x) - (width/2)/tile_size;
-    p.y = (player_pos.y) - (height/2)/tile_size;
+static MAP_Point get_top_left_corner_of_screen_as_map_coordinates() {
+    MAP_Point p;
+    p.x = (player_pos.x) - ((width/2)/tile_size);
+    p.y = (player_pos.y) - ((height/2)/tile_size);
      if(p.x < 0) {
         p.x = 0;
     }
@@ -470,8 +500,8 @@ static Point get_top_left_corner_of_screen_as_map_coordinates() {
     return p;
 }
 
-static Point get_bottom_right_corner_of_screen_as_map_coordinates() {
-    Point p;
+static MAP_Point get_bottom_right_corner_of_screen_as_map_coordinates() {
+    MAP_Point p;
     p.x = (player_pos.x) + (width/2)/tile_size;
     p.y = (player_pos.y) + (height/2)/tile_size;
      if(p.x > map.width) {
@@ -486,7 +516,7 @@ static Point get_bottom_right_corner_of_screen_as_map_coordinates() {
 static void draw_player(SDL_Surface* screen) {
 
      //Drawing the player at the center of the screen
-     Point position = to_screen_space(player_pos.x, player_pos.y);
+     MAP_Point position = to_screen_space(player_pos.x, player_pos.y);
      SDL_Rect pos = { .w = tile_size, .h = tile_size, .x = position.x, .y = position.y};
 
      SDL_BlitSurface(tileset, &tiles[get_animated_tile(player_tile)], screen, &pos);
@@ -504,13 +534,13 @@ static void draw_map(SDL_Surface* screen) {
 
      //Drawing the map
     Uint32 x, y = 0;
-    Point p = get_top_left_corner_of_screen_as_map_coordinates();
-    Point limits = get_bottom_right_corner_of_screen_as_map_coordinates();
+    MAP_Point p = get_top_left_corner_of_screen_as_map_coordinates();
+    MAP_Point limits = get_bottom_right_corner_of_screen_as_map_coordinates();
 
-    for(x = p.x; x < limits.x; x++) {
-        for(y = p.y; y < limits.y; y++) {
+    for(x = p.x; x <= limits.x; x++) {
+        for(y = p.y; y <= limits.y; y++) {
             Tile tile = map.data[y][x];
-            Point p2 = to_screen_space(x, y);
+            MAP_Point p2 = to_screen_space(x, y);
             SDL_Rect r = { .w = tile_size, .h = tile_size, .x = p2.x, .y = p2.y};
             SDL_BlitSurface(tileset, &tiles[get_animated_tile(tile)], screen, &r);
             if(show_collisions) {
@@ -520,6 +550,17 @@ static void draw_map(SDL_Surface* screen) {
                     SDL_FillRect(screen, &r, SDL_MapRGB(screen->format, 255, 0, 0));
                 }
             }
+        }
+    }
+}
+
+static void call_callback_event_if_at_point(MAP_Point p) {
+
+    int i = 0;
+    for(i=0; i < events.count; i++) {
+        if(events.data[i].event_position.x == p.x && events.data[i].event_position.y == p.y) {
+            events.data[i].event();
+            break;
         }
     }
 }

@@ -19,7 +19,7 @@
 					<Add option="-DDC" />
 				</Compiler>
 				<Linker>
-					<Add option="obj\Debug\romdisk.o" />
+					<Add option="obj\Debug\romdisk.o  -lmp3 -lm" />
 				</Linker>
 			</Target>
 			<Target title="Dreamcast Release">
@@ -35,7 +35,7 @@
 					<Add option="-DDC" />
 				</Compiler>
 				<Linker>
-					<Add option="obj\Release\romdisk.o" />
+					<Add option="obj\Release\romdisk.o  -lmp3 -lm" />
 				</Linker>
 			</Target>
 			<Target title="PC">
@@ -70,6 +70,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="game.h" />
+		<Unit filename="game_events.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="game_events.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -83,7 +87,11 @@
 		<Unit filename="romdisk/character.bmp" />
 		<Unit filename="romdisk/colliders.col" />
 		<Unit filename="romdisk/font.bmp" />
+		<Unit filename="romdisk/forgevielle.map" />
 		<Unit filename="romdisk/hit.wav" />
+		<Unit filename="romdisk/map.map" />
+		<Unit filename="romdisk/morstairs_city.map" />
+		<Unit filename="romdisk/music.mp3" />
 		<Unit filename="romdisk/overworld.map" />
 		<Unit filename="romdisk/romfs.txt" />
 		<Unit filename="romdisk/ultima.bmp" />

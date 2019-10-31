@@ -7,7 +7,7 @@
 #include "../morstairs/text/text.h"
 #include "../morstairs/map/map_editor.h"
 
-#define MAP_IN "data/map.map"
+#define MAP_IN "../morstairs/romdisk/map.map"
 #define MAP_OUT "../morstairs/romdisk/map.map"
 #define COL_IN "data/colliders.col"
 #define COL_OUT "../morstairs/romdisk/colliders.col"
