@@ -28,7 +28,7 @@ int GAME_init_engine() {
         return FAILURE;
     }
 
-    if(!TEXT_init(FONTS_PATH, 8, 8)) {
+    if(!TEXT_init(FONTS_PATH, FONT_H, FONT_W)) {
         return FAILURE;
     }
 

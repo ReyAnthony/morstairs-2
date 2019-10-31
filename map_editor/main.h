@@ -7,8 +7,8 @@
 #include "../morstairs/text/text.h"
 #include "../morstairs/map/map_editor.h"
 
-#define MAP_IN "../morstairs/romdisk/map.map"
-#define MAP_OUT "../morstairs/romdisk/map.map"
+#define MAP_IN "../morstairs/romdisk/morstairs_city.map"
+#define MAP_OUT "../morstairs/romdisk/morstairs_city.map"
 #define COL_IN "data/colliders.col"
 #define COL_OUT "../morstairs/romdisk/colliders.col"
 
@@ -28,9 +28,6 @@
                   \n+ hover > frame : 8\
                   \nPrevious tile : 9\
                   \nNext Tile : 0\n"
-
-
-
 
 #define DUMMY "data/dummy.file"
 
