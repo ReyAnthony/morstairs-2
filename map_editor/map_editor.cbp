@@ -47,7 +47,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../morstairs/map/map.h" />
-		<Unit filename="../morstairs/map/map_editor.h" />
+		<Unit filename="../morstairs/map/map_submodule.h" />
 		<Unit filename="../morstairs/text/text.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -58,10 +58,18 @@
 		<Unit filename="data/font.bmp" />
 		<Unit filename="data/map.map" />
 		<Unit filename="data/ultima.bmp" />
+		<Unit filename="event_editor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="event_editor.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.h" />
+		<Unit filename="map/map_editor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="map/map_editor.h" />
 		<Unit filename="tinyfiledialogs/tinyfiledialogs.c">
 			<Option compilerVar="CC" />
 		</Unit>

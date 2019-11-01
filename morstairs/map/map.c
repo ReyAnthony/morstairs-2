@@ -349,7 +349,8 @@ static void draw_player(SDL_Surface* screen) {
      int i;
      for (i = 0; i < delegates.count; i++) {
         if(delegates.data[i].player_draw_delegate != NULL) {
-            delegates.data[i].player_draw_delegate(pos, screen, player_tile);
+             MAP_Point p = {.x = player_pos.x, .y = player_pos.y};
+             delegates.data[i].map_draw_delegate(pos, screen, player_tile, p);
         }
      }
 }
@@ -371,7 +372,8 @@ static void draw_map(SDL_Surface* screen) {
             int i;
             for (i = 0; i < delegates.count; i++) {
                 if(delegates.data[i].map_draw_delegate != NULL) {
-                    delegates.data[i].map_draw_delegate(r, screen, tile);
+                    MAP_Point p = {.x = x, .y = y};
+                    delegates.data[i].map_draw_delegate(r, screen, tile, p);
                 }
             }
         }

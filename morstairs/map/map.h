@@ -55,8 +55,8 @@ typedef struct MAP_submodule_t {
 } MAP_SubmodulePackage;
 
 typedef struct MAP_submodule_delegation_t {
-    void (*map_draw_delegate)(SDL_Rect r, SDL_Surface* screen, Tile t);
-    void (*player_draw_delegate)(SDL_Rect r, SDL_Surface* screen, Tile t);
+    void (*map_draw_delegate)(SDL_Rect r, SDL_Surface* screen, Tile t, MAP_Point position_on_map);
+    void (*player_draw_delegate)(SDL_Rect r, SDL_Surface* screen, Tile t, MAP_Point position_on_map);
     void (*on_movement_delegate) (MAP_Point point);
 } MAP_SubmoduleDelegation;
 

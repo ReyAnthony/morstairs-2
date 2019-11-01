@@ -74,6 +74,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="game.h" />
+		<Unit filename="game_event_codegen.h" />
 		<Unit filename="game_events.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -325,13 +325,13 @@
 	"begin_code.h"
 	"close_code.h"
 
-1572555018 source:c:\users\anthony\desktop\morstairs_project\map_editor\main.c
+1572582483 source:c:\users\anthony\desktop\morstairs_project\map_editor\main.c
 	"main.h"
 
-1572559344 source:c:\users\anthony\desktop\morstairs_project\morstairs\map\map.c
+1572565152 source:c:\users\anthony\desktop\morstairs_project\morstairs\map\map.c
 	"map.h"
 
-1572560304 c:\users\anthony\desktop\morstairs_project\morstairs\map\map.h
+1572565002 c:\users\anthony\desktop\morstairs_project\morstairs\map\map.h
 	"SDL/SDL.h"
 
 1572550896 source:c:\users\anthony\desktop\morstairs_project\morstairs\text\text.c
@@ -343,13 +343,14 @@
 1572556026 c:\users\anthony\desktop\morstairs_project\morstairs\map\map_editor.h
 	"map.h"
 
-1572561089 c:\users\anthony\desktop\morstairs_project\map_editor\main.h
+1572582194 c:\users\anthony\desktop\morstairs_project\map_editor\main.h
 	<stdlib.h>
 	<SDL/SDL.h>
 	<string.h>
 	"tinyfiledialogs/tinyfiledialogs.h"
 	"../morstairs/text/text.h"
 	"map/map_editor.h"
+	"event_editor.h"
 
 1562429462 c:\mingw\include\windows.h
 	<winresrc.h>
@@ -629,6 +630,17 @@
 1572561276 c:\users\anthony\desktop\morstairs_project\map_editor\map\map_editor.h
 	"../../morstairs/map/map.h"
 
-1572557751 source:c:\users\anthony\desktop\morstairs_project\map_editor\map\map_editor.c
+1572563770 source:c:\users\anthony\desktop\morstairs_project\map_editor\map\map_editor.c
 	"map_editor.h"
+
+1572583826 source:c:\users\anthony\desktop\morstairs_project\map_editor\event_editor.c
+	"event_editor.h"
+
+1572582595 c:\users\anthony\desktop\morstairs_project\map_editor\event_editor.h
+	"../morstairs/map/map.h"
+	"map/map_editor.h"
+	<libgen.h>
+
+1562429450 c:\mingw\include\libgen.h
+	<_mingw.h>
 

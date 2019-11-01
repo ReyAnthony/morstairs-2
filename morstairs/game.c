@@ -21,7 +21,7 @@ static Uint32 repeat_time = 0;
 int GAME_init_engine() {
 
     init_timer();
-    if(!MAP_init(TILESET_PATH, OVERWORLD_MAP_PATH,
+    if(!MAP_init(TILESET_PATH, OVERWORLD_MAP_MAP_PATH,
                     COLLIDERS_PATH, ANIMATED_PATH,
                     TILE_SIZE, WIDTH, HEIGHT)) {
         fprintf(stderr, "Error while loading map engine");

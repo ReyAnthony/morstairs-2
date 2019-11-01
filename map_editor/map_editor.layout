@@ -4,7 +4,37 @@
 	<ActiveTarget name="Release" />
 	<File name="..\morstairs\map\map.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="648" topLine="9" />
+			<Cursor1 position="1642" topLine="54" />
+		</Cursor>
+	</File>
+	<File name="event_editor.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1102" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="tinyfiledialogs\tinyfiledialogs.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="13590" topLine="583" />
+		</Cursor>
+	</File>
+	<File name="map\map_editor.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4295" topLine="154" />
+		</Cursor>
+	</File>
+	<File name="..\morstairs\map\map.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="20" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\morstairs\map\map_submodule.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="88" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="event_editor.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="337" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="data\animated.ani" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -12,43 +42,24 @@
 			<Cursor1 position="1" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="..\morstairs\map\map_editor.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="289" topLine="0" />
+			<Cursor1 position="1073" topLine="29" />
 		</Cursor>
 	</File>
 	<File name="main.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1238" topLine="22" />
-		</Cursor>
-	</File>
-	<File name="main.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1252" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\morstairs\map\map.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4963" topLine="182" />
-		</Cursor>
-		<Folding>
-			<Collapse line="334" />
-			<Collapse line="352" />
-			<Collapse line="372" />
-			<Collapse line="391" />
-			<Collapse line="407" />
-			<Collapse line="426" />
-			<Collapse line="435" />
-		</Folding>
-	</File>
-	<File name="tinyfiledialogs\tinyfiledialogs.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4046" topLine="117" />
+			<Cursor1 position="253" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="..\morstairs\text\text.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2637" topLine="69" />
+			<Cursor1 position="2637" topLine="39" />
+		</Cursor>
+	</File>
+	<File name="map\map_editor.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="650" topLine="1" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

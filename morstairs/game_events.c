@@ -15,6 +15,7 @@ static void add_event_callback(void (*event)(void), MAP_Point p);
 static void clear_events();
 
 #include "game_event_codegen.h"
+#include "event_editor_gen.inc.h"
 
 static void overworld_events();
 static Events events;
@@ -30,7 +31,7 @@ MAP_SubmoduleDelegation  EVENTS_submodule_initializer(MAP_SubmodulePackage submo
     .on_movement_delegate = on_movement_delegate
     };
 
-    INIT_EVENTS
+    OVERWORLD_MAP_EVENTS
     return delegation;
 }
 

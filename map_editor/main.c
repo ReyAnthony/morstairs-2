@@ -16,6 +16,7 @@ static char** filters = {"*.map"};
 
 static void load_map_dialog() {
     open_file = tinyfd_openFileDialog("Choose map file", "./", 0, filters, "map files", 0);
+    EVENTED_set_current_map_filename(open_file);
 }
 
 int main ( int argc, char** argv )
@@ -38,6 +39,8 @@ int main ( int argc, char** argv )
         return EXIT_FAILURE;
     }
     MAP_extends_with_submodule(MAPED_submodule_initializer);
+    MAP_extends_with_submodule(EVENTED_submodule_initializer);
+    EVENTED_load_file(EV_IN);
     current_tile = MAPED_get_player_tile();
 
     atexit(SDL_Quit);
@@ -133,11 +136,28 @@ int main ( int argc, char** argv )
                         MAPED_change_player_tile(MAPED_get_hover_tile());
                         current_tile = MAPED_get_hover_tile();
                     }
+                    else if (event.key.keysym.sym == SDLK_e) {
+                        if(EVENTED_is_destination_selection_phase()) {
+                            most_recent_message.format_string = "Current hover added as event destination";
+                        }
+                        else {
+                             most_recent_message.format_string = "Current hover added as event origin\nPlease select a destination";
+                        }
+                        EVENTED_set_hover_as_event();
+                    }
                     else if (event.key.keysym.sym == SDLK_r) {
                         load_map_dialog();
                         if(open_file != NULL) {
                             MAP_load_another(open_file, MAPED_get_player_position());
                         }
+                    }
+                    else if (event.key.keysym.sym == SDLK_g) {
+                        EVENTED_follow_event(&open_file);
+                         most_recent_message.format_string = "Following event...";
+                    }
+                    else if (event.key.keysym.sym == SDLK_d) {
+                        EVENTED_delete();
+                        most_recent_message.format_string = "Deleted event..";
                     }
                     else if(event.key.keysym.sym == SDLK_LEFT) {
                         MAP_move(WEST);
@@ -197,4 +217,5 @@ static void update_messages() {
 static void save() {
     MAPED_save_all_modifications(open_file, COL_IN, ANIM_IN);
     MAPED_save_all_modifications(open_file, COL_OUT, ANIM_OUT);
+    EVENTED_save(EV_IN);
 }
