@@ -336,6 +336,7 @@ static int generate_header() {
             AddEvent* add_ev = &ev_func->addEvent[k];
             fprintf(f, "\tADD_EVENT_AT_POSITION(%d, %d, %s)\n", add_ev->p.x, add_ev->p.y, add_ev->func_name);
         }
+        fprintf(f, "\t%s_MUS\n", ev_func->name);
         fprintf(f, "}\n");
     }
 
