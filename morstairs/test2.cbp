@@ -71,6 +71,10 @@
 		<Unit filename="audio/audio.h" />
 		<Unit filename="constants.h" />
 		<Unit filename="event_editor_gen.inc.h" />
+		<Unit filename="fov/fov.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fov/fov.h" />
 		<Unit filename="game.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -87,10 +91,8 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="map/map.h" />
-		<Unit filename="map/map_editor.h" />
 		<Unit filename="paths.h" />
 		<Unit filename="romdisk/animated.ani" />
-		<Unit filename="romdisk/character.bmp" />
 		<Unit filename="romdisk/colliders.col" />
 		<Unit filename="romdisk/font.bmp" />
 		<Unit filename="romdisk/forgevielle.map" />

@@ -37,6 +37,7 @@ int GAME_init_engine() {
     }
 
     MAP_extends_with_submodule(EVENTS_submodule_initializer);
+    MAP_extends_with_submodule(FOV_submodule_initializer);
     return SUCCESS;
 }
 
@@ -70,7 +71,7 @@ static void init_timer() {
 static void game_draw(SDL_Surface* screen) {
 
      MAP_draw(screen, timer.delta_time);
-     SDL_BlitSurface(TEXT_blit("Pre-alpha gameplay"), NULL, screen, NULL);
+     //SDL_BlitSurface(TEXT_blit("Pre-alpha gameplay"), NULL, screen, NULL);
      SDL_Flip(screen);
      SDL_FillRect(screen, NULL, 0);
 }

@@ -49,9 +49,11 @@ typedef struct MAP_submodule_t {
     Tile* player_tile;
     int* has_collisions;
     int tile_size;
+    int* is_move_locked;
 
     //API exposed to submodules
     int (*is_blocking)(Tile t);
+    MAP_Point (*to_screen_space) (Uint32 map_x, Uint32 map_y);
 } MAP_SubmodulePackage;
 
 typedef struct MAP_submodule_delegation_t {

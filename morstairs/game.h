@@ -11,6 +11,7 @@
 #include "constants.h"
 #include "game_events.h"
 #include "audio/audio.h"
+#include "fov/fov.h"
 
 
 #include "text/text.h"

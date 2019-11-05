@@ -10,6 +10,8 @@
     #include <SDL/SDL_mixer.h>
 #endif
 
+#include <string.h>
+
 int AUDIO_init();
 void AUDIO_play(const char* file, int loop);
 void AUDIO_quit();

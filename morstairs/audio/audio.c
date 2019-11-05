@@ -6,6 +6,8 @@
    static Mix_Music* music;
 #endif
 
+static char current_music[255];
+
 int AUDIO_init() {
 #ifdef DC
     snd_stream_init();
@@ -21,6 +23,12 @@ int AUDIO_init() {
 }
 
 void AUDIO_play(const char* file, int loop) {
+
+//don't play the same music again
+if(strcmp(current_music, file) == 0) {
+    return;
+}
+
 #ifdef DC
     sndoggvorbis_stop();
     sndoggvorbis_start(file, loop);
@@ -35,6 +43,8 @@ void AUDIO_play(const char* file, int loop) {
     music = Mix_LoadMUS(file);
     Mix_PlayMusic(music, loop);
 #endif
+
+strcpy(current_music, file);
 }
 
 void AUDIO_quit() {

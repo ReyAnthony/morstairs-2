@@ -79,10 +79,10 @@
 1571763735 source:c:\users\anthony\desktop\morstairs\text.c
 	"text.h"
 
-1572581612 source:c:\users\anthony\desktop\morstairs_project\morstairs\game.c
+1572715757 source:c:\users\anthony\desktop\morstairs_project\morstairs\game.c
 	"game.h"
 
-1572530623 c:\users\anthony\desktop\morstairs_project\morstairs\game.h
+1572715789 c:\users\anthony\desktop\morstairs_project\morstairs\game.h
 	<stdio.h>
 	<stdlib.h>
 	"SDL/SDL.h"
@@ -90,6 +90,7 @@
 	"constants.h"
 	"game_events.h"
 	"audio/audio.h"
+	"fov/fov.h"
 	"text/text.h"
 	"map/map.h"
 
@@ -97,7 +98,7 @@
 	<stdlib.h>
 	<stdio.h>
 
-1572581599 c:\users\anthony\desktop\morstairs_project\morstairs\paths.h
+1572626623 c:\users\anthony\desktop\morstairs_project\morstairs\paths.h
 
 1572524263 c:\users\anthony\desktop\morstairs_project\morstairs\constants.h
 
@@ -112,29 +113,29 @@
 1571930067 source:c:\users\anthony\desktop\morstairs_project\morstairs\error_management.c
 	"error_management.h"
 
-1572535721 source:c:\users\anthony\desktop\morstairs_project\morstairs\main.c
+1572626266 source:c:\users\anthony\desktop\morstairs_project\morstairs\main.c
 	<kos.h>
 	<arch/arch.h>
 	<arch/gdb.h>
 	"game.h"
 	<time.h>
 
-1572565152 source:c:\users\anthony\desktop\morstairs_project\morstairs\map\map.c
+1572914509 source:c:\users\anthony\desktop\morstairs_project\morstairs\map\map.c
 	"map.h"
 
-1572565002 c:\users\anthony\desktop\morstairs_project\morstairs\map\map.h
+1572914471 c:\users\anthony\desktop\morstairs_project\morstairs\map\map.h
 	"SDL/SDL.h"
 
 1572360524 c:\users\anthony\desktop\morstairs_project\morstairs\text\text.h
 	"SDL/SDL.h"
 
-1572550896 source:c:\users\anthony\desktop\morstairs_project\morstairs\text\text.c
+1572885210 source:c:\users\anthony\desktop\morstairs_project\morstairs\text\text.c
 	"text.h"
 
 1572556026 c:\users\anthony\desktop\morstairs_project\morstairs\map\map_editor.h
 	"map.h"
 
-1572612186 source:c:\users\anthony\desktop\morstairs_project\morstairs\game_events.c
+1572621843 source:c:\users\anthony\desktop\morstairs_project\morstairs\game_events.c
 	"game_events.h"
 	"game_event_codegen.h"
 	"event_editor_gen.inc.h"
@@ -145,19 +146,26 @@
 	"constants.h"
 	"audio/audio.h"
 
-1572532581 source:c:\users\anthony\desktop\morstairs_project\morstairs\audio\audio.c
+1572615389 source:c:\users\anthony\desktop\morstairs_project\morstairs\audio\audio.c
 	"audio.h"
 
-1572530539 c:\users\anthony\desktop\morstairs_project\morstairs\audio\audio.h
+1572615336 c:\users\anthony\desktop\morstairs_project\morstairs\audio\audio.h
 	<kos.h>
 	<oggvorbis/sndoggvorbis.h>
 	<SDL/SDL.h>
 	<SDL/SDL_mixer.h>
+	<string.h>
 
 1572557751 source:c:\users\anthony\desktop\morstairs_project\morstairs\map\map_editor.c
 	"map_editor.h"
 
-1572612324 c:\users\anthony\desktop\morstairs_project\morstairs\game_event_codegen.h
+1572626653 c:\users\anthony\desktop\morstairs_project\morstairs\game_event_codegen.h
 
-1572612275 c:\users\anthony\desktop\morstairs_project\morstairs\event_editor_gen.inc.h
+1572900648 c:\users\anthony\desktop\morstairs_project\morstairs\event_editor_gen.inc.h
+
+1572715712 c:\users\anthony\desktop\morstairs_project\morstairs\fov\fov.h
+	"../map/map.h"
+
+1572951306 source:c:\users\anthony\desktop\morstairs_project\morstairs\fov\fov.c
+	"fov.h"
 

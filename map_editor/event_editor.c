@@ -1,5 +1,9 @@
 #include "event_editor.h"
 
+//FUll of bugs, refactor me !
+//bug save when we switch events (overwrite map)
+//and sometimes bug at generation
+
 #define FAILURE 0
 #define SUCCESS 1
 
@@ -52,10 +56,10 @@ MAP_SubmoduleDelegation EVENTED_submodule_initializer(MAP_SubmodulePackage submo
 
 void EVENTED_set_hover_as_event() {
     if(phase == ORIGIN_SELECTION) {
-        strcpy(events.data[events.count].origin, map_name);
-        events.data[events.count].origin_pos = MAPED_get_player_position();
-        phase = DESTINATION_SELECTION;
         events.count++;
+        strcpy(events.data[events.count-1].origin, map_name);
+        events.data[events.count-1].origin_pos = MAPED_get_player_position();
+        phase = DESTINATION_SELECTION;
     }
     else {
         strcpy(events.data[events.count-1].destination, map_name);
@@ -184,7 +188,7 @@ void EVENTED_follow_event(char** file) {
                 if(NOT_DELETED) {
                     MAP_load_another(events.data[i].origin,  events.data[i].origin_pos);
                     EVENTED_set_current_map_filename(events.data[i].origin);
-                    strcpy(*file, events.data[i].destination);
+                    strcpy(*file, events.data[i].origin);
                     break;
                 }
             }
@@ -228,7 +232,7 @@ typedef struct event_func_gen_s2 {
     char name[255];
 }EventFunc;
 
-static EventFunc event_funcs[32];
+static EventFunc event_funcs[256];
 static int event_func_count = 0;
 
 static EventFunc* find_func_for_origin(char* origin, int event_func_count, EventFunc* event_funcs);
@@ -298,7 +302,7 @@ static int generate_header() {
         ev_func->add_ev_count++;
     }
 
-    int j;
+     int j;
      for(j = 0; j < event_func_count; j++) {
         EventFunc* ev_func = &event_funcs[j];
         fprintf(f, "static void %s_EVENTS_F();\n", ev_func->name);
@@ -310,7 +314,6 @@ static int generate_header() {
      }
 
     fprintf(f, "\n");
-
 
      for(i = 0; i < events.count; i++) {
         if(DELETED) {

@@ -35,6 +35,7 @@ static Uint8 TILE_SIZE;
 static Uint32 SCREEN_WIDTH;
 static Uint32 SCREEN_HEIGHT;
 static int has_collisions = SUCCESS;
+static int is_move_locked;
 
 int MAP_init(const char* tileset_file, const char* map_file,
                      const char* collision_file, const char* animation_file,
@@ -62,6 +63,7 @@ int MAP_init(const char* tileset_file, const char* map_file,
     }
 
     player_tile = 284;
+    is_move_locked = FAILURE;
     return SUCCESS;
 }
 
@@ -75,9 +77,11 @@ void MAP_extends_with_submodule(MAP_SubmoduleDelegation (*submodule_init)(MAP_Su
                 .player_pos = &player_pos,
                 .has_collisions = &has_collisions,
                 .tile_size = TILE_SIZE,
+                .is_move_locked = &is_move_locked,
 
                 //api
-                .is_blocking = is_blocking
+                .is_blocking = is_blocking,
+                .to_screen_space = to_screen_space
             };
 
     delegates.data[delegates.count] = submodule_init(smp);
@@ -108,12 +112,19 @@ void MAP_draw(SDL_Surface* screen, Uint32 delta_time) {
 
 void MAP_move(MAP_Directions direction) {
 
+    if(is_move_locked) {
+        return;
+    }
+
+    int actually_has_moved = FAILURE;
+
     switch(direction) {
     case NORTH:
         if(player_pos.y > 0) {
             Uint16 tile_at_player_pos = map.data[player_pos.y - 1][player_pos.x];
             if(!is_blocking(tile_at_player_pos) || !has_collisions){
                 player_pos.y--;
+                actually_has_moved = SUCCESS;
             }
             else {
                 //play feedback sound
@@ -128,6 +139,7 @@ void MAP_move(MAP_Directions direction) {
             Tile tile_at_player_pos = map.data[player_pos.y + 1][player_pos.x];
             if(!is_blocking(tile_at_player_pos) || !has_collisions){
                 player_pos.y++;
+                actually_has_moved = SUCCESS;
             }
             else {
                 //play feedback sound
@@ -142,6 +154,7 @@ void MAP_move(MAP_Directions direction) {
             Tile tile_at_player_pos = map.data[player_pos.y][player_pos.x + 1];
             if(!is_blocking(tile_at_player_pos) || !has_collisions){
                 player_pos.x++;
+                actually_has_moved = SUCCESS;
             }
             else {
                 //play feedback sound
@@ -156,6 +169,7 @@ void MAP_move(MAP_Directions direction) {
             Tile tile_at_player_pos = map.data[player_pos.y][player_pos.x - 1];
             if(!is_blocking(tile_at_player_pos) || !has_collisions){
                 player_pos.x--;
+                actually_has_moved = SUCCESS;
             }
             else {
                 //play feedback sound
@@ -169,10 +183,12 @@ void MAP_move(MAP_Directions direction) {
         break;
     }
 
-    int i;
-    for (i = 0; i < delegates.count; i++) {
-        if(delegates.data[i].on_movement_delegate != NULL) {
-            delegates.data[i].on_movement_delegate(player_pos);
+    if(actually_has_moved) {
+        int i;
+        for (i = 0; i < delegates.count; i++) {
+            if(delegates.data[i].on_movement_delegate != NULL) {
+                delegates.data[i].on_movement_delegate(player_pos);
+            }
         }
     }
 }

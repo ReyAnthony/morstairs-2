@@ -7,10 +7,16 @@
  #define MORSTAIRS_MAP_MUS\
     AUDIO_play(STONES, 1);
 
+#define NONOTOWN_MAP_MUS\
+    AUDIO_play(STONES, 1);
+
 #define OVERWORLD_MAP_MUS\
     AUDIO_play(OVERWORLD, 1);
 
 #define DUNGEON_MAP_MUS\
+    AUDIO_play(DUNGEON, 1);
+
+#define DUNGEON_2_MAP_MUS\
     AUDIO_play(DUNGEON, 1);
 
 #define ADD_EVENT_AT_POSITION(xx, yy, func) {\

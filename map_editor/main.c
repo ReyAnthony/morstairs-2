@@ -153,7 +153,8 @@ int main ( int argc, char** argv )
                     }
                     else if (event.key.keysym.sym == SDLK_g) {
                         EVENTED_follow_event(&open_file);
-                         most_recent_message.format_string = "Following event...";
+                        most_recent_message.format_string = "Following event... \n(%s)";
+                        most_recent_message.arg = basename(open_file);
                     }
                     else if (event.key.keysym.sym == SDLK_d) {
                         EVENTED_delete();
