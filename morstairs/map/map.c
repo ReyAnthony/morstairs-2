@@ -36,6 +36,7 @@ static Uint32 SCREEN_WIDTH;
 static Uint32 SCREEN_HEIGHT;
 static int has_collisions = SUCCESS;
 static int is_move_locked;
+static char current_map[255];
 
 int MAP_init(const char* tileset_file, const char* map_file,
                      const char* collision_file, const char* animation_file,
@@ -64,6 +65,7 @@ int MAP_init(const char* tileset_file, const char* map_file,
 
     player_tile = 284;
     is_move_locked = FAILURE;
+    strcpy(current_map, map_file);
     return SUCCESS;
 }
 
@@ -87,6 +89,9 @@ void MAP_extends_with_submodule(MAP_SubmoduleDelegation (*submodule_init)(MAP_Su
     delegates.data[delegates.count] = submodule_init(smp);
     delegates.count++;
 
+    if (delegates.data[delegates.count-1].on_new_map_loaded != NULL) {
+        delegates.data[delegates.count-1].on_new_map_loaded(current_map);
+    }
     //TODO delete submodules..
 }
 
@@ -94,6 +99,13 @@ void MAP_load_another(const char* map_file, MAP_Point p) {
     memset(&map, 0, sizeof(Map));
     load_map(map_file);
     player_pos = p;
+    int i;
+    for(i = 0; i < delegates.count; i++) {
+        if (delegates.data[i].on_new_map_loaded != NULL) {
+            delegates.data[i].on_new_map_loaded(map_file);
+        }
+    }
+    strcpy(current_map, map_file);
 }
 
 void MAP_quit() {
@@ -311,7 +323,7 @@ static MAP_Point to_screen_space(Uint32 map_x, Uint32 map_y) {
     MAP_Point p;
     p.x = SCREEN_WIDTH/2 - ((player_pos.x - map_x) * TILE_SIZE);
     p.y = SCREEN_HEIGHT/2 - ((player_pos.y - map_y) * TILE_SIZE);
-    p.y -= 12; //hack for the wrong position
+    p.y -= TILE_SIZE/2; //hack for the wrong position
 
     if(p.x > SCREEN_WIDTH) {
         p.x = SCREEN_WIDTH;

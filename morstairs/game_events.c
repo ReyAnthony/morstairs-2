@@ -69,6 +69,7 @@ static void draw_map_when_switching_scene(SDL_Rect r, SDL_Surface* screen, Tile 
             curtain.is_enabled = FAILURE;
             *smp.is_move_locked = FAILURE;
             curtain.func_on_end();
+            return;
         }
         r.w = smp.tile_size;
         r.h = curtain.y;

@@ -39,6 +39,7 @@ static Phase phase;
 static char map_name[512];
 
 static void map_draw(SDL_Rect r, SDL_Surface* screen, Tile t, MAP_Point position_on_map);
+static void on_new_map_loaded(char* filename);
 static int generate_header();
 
 MAP_SubmoduleDelegation EVENTED_submodule_initializer(MAP_SubmodulePackage submod) {
@@ -47,7 +48,8 @@ MAP_SubmoduleDelegation EVENTED_submodule_initializer(MAP_SubmodulePackage submo
     {
     .map_draw_delegate = map_draw,
     .player_draw_delegate = NULL,
-    .on_movement_delegate = NULL
+    .on_movement_delegate = NULL,
+    .on_new_map_loaded = on_new_map_loaded
     };
 
     phase = ORIGIN_SELECTION;
@@ -149,15 +151,6 @@ void EVENTED_delete() {
     }
 }
 
-//TODO put it in the map file?
-void EVENTED_set_current_map_filename(char* name) {
-    if(name == NULL) {
-        return;
-    }
-
-    strcpy(map_name, name);
-}
-
 int EVENTED_is_destination_selection_phase() {
 
     //we should lock most actions when we are in this phase
@@ -178,8 +171,6 @@ void EVENTED_follow_event(char** file) {
             if(CHECK_ORIGIN_POS(smp.player_pos->x, smp.player_pos->y)){
                 if(NOT_DELETED) {
                      MAP_load_another(events.data[i].destination, events.data[i].destination_pos);
-                     EVENTED_set_current_map_filename(events.data[i].destination);
-                     strcpy(*file, events.data[i].destination);
                      break;
                 }
             }
@@ -187,13 +178,20 @@ void EVENTED_follow_event(char** file) {
             if(CHECK_DESTINATION_POS(smp.player_pos->x, smp.player_pos->y)){
                 if(NOT_DELETED) {
                     MAP_load_another(events.data[i].origin,  events.data[i].origin_pos);
-                    EVENTED_set_current_map_filename(events.data[i].origin);
                     strcpy(*file, events.data[i].origin);
                     break;
                 }
             }
         }
     }
+}
+
+static void on_new_map_loaded(char* filename) {
+    if(filename == NULL) {
+        return;
+    }
+
+    strcpy(map_name, filename);
 }
 
 static void map_draw(SDL_Rect r, SDL_Surface* screen, Tile t, MAP_Point position_on_map) {

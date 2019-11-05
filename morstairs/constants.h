@@ -4,7 +4,7 @@
 #ifdef PC
 #define TILE_SIZE 64
 #define WIDTH 640
-#define HEIGHT 360
+#define HEIGHT 480
 #define FONT_H 16
 #define FONT_W 16
 #endif

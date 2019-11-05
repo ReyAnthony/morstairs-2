@@ -10,7 +10,6 @@ void EVENTED_load_file(char* file);
 int EVENTED_is_destination_selection_phase();
 void EVENTED_set_hover_as_event();
 void EVENTED_remove_hover_as_event();
-void EVENTED_set_current_map_filename(char* name);
 void EVENTED_follow_event(char** file);
 void EVENTED_delete();
 int EVENTED_save(char* file);

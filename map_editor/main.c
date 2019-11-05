@@ -16,7 +16,6 @@ static char** filters = {"*.map"};
 
 static void load_map_dialog() {
     open_file = tinyfd_openFileDialog("Choose map file", "./", 0, filters, "map files", 0);
-    EVENTED_set_current_map_filename(open_file);
 }
 
 int main ( int argc, char** argv )
