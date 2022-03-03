@@ -191,7 +191,19 @@ static void on_new_map_loaded(char* filename) {
         return;
     }
 
-    strcpy(map_name, filename);
+    int i = 0;
+    int last_slash = i;
+    while(filename[i] != '\0') {
+        if(filename[i] == '\\' || filename[i] == '/') {
+            last_slash = i;
+        }
+        i++;
+    }
+
+    char relative_path[512];
+    strcpy(relative_path, ".\\data\\");
+    strcat(relative_path, &filename[last_slash + 1]);
+    strcpy(map_name, relative_path);
 }
 
 static void map_draw(SDL_Rect r, SDL_Surface* screen, Tile t, MAP_Point position_on_map) {
@@ -253,7 +265,7 @@ static EventFunc* find_func_for_origin(char* origin, int event_func_count, Event
 static int generate_header() {
     FILE* f;
 
-    if((f = fopen("../morstairs/event_editor_gen.inc.h", "w")) == NULL) {
+    if((f = fopen(CODEGEN_FILE_EVENTS_H, "w")) == NULL) {
         return FAILURE;
     }
 

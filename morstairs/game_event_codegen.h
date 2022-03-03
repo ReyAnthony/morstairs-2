@@ -1,6 +1,7 @@
 #ifndef GAME_EVENT_CODEGEN_H_INCLUDED
 #define GAME_EVENT_CODEGEN_H_INCLUDED
 
+//Add macros matching the name of the map here or game will not compile
 #define FORGEVIELLE_MAP_MUS\
     AUDIO_play(STONES, 1);
 
@@ -19,6 +20,8 @@
 #define DUNGEON_2_MAP_MUS\
     AUDIO_play(DUNGEON, 1);
 
+
+// common codegen macros
 #define ADD_EVENT_AT_POSITION(xx, yy, func) {\
     MAP_Point p = {.x = xx, .y = yy};\
     add_event_callback(func, p);\

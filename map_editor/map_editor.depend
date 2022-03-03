@@ -72,65 +72,63 @@
 1326110994 c:\mingw\include\sdl\sdl_config_win32.h
 	"SDL_platform.h"
 
-1562429450 c:\mingw\include\sys\types.h
+1512587389 c:\mingw\include\sys\types.h
 	<_mingw.h>
 	<stddef.h>
 
-1562429450 c:\mingw\include\_mingw.h
+1512587389 c:\mingw\include\_mingw.h
 	<msvcrtver.h>
 	<w32api.h>
-	<features.h>
 
-1562429450 c:\mingw\include\msvcrtver.h
+1512587389 c:\mingw\include\msvcrtver.h
 	<_mingw.h>
 
-1562429462 c:\mingw\include\w32api.h
+1512587401 c:\mingw\include\w32api.h
 	<sdkddkver.h>
 
-1562429462 c:\mingw\include\sdkddkver.h
+1512587401 c:\mingw\include\sdkddkver.h
 
 1571676088 c:\mingw\include\features.h
 
-1562429450 c:\mingw\include\stdio.h
+1512587389 c:\mingw\include\stdio.h
 	<_mingw.h>
 	<stddef.h>
 	"sys/types.h"
 	"stdarg.h"
 	<locale.h>
 
-1562429450 c:\mingw\include\locale.h
+1512587389 c:\mingw\include\locale.h
 	<_mingw.h>
 	<stddef.h>
 
-1562429450 c:\mingw\include\stdlib.h
+1512587389 c:\mingw\include\stdlib.h
 	<_mingw.h>
 	<stddef.h>
 	<locale.h>
-	"alloca.h"
 
 1562429450 c:\mingw\include\alloca.h
 	<_mingw.h>
 	<stddef.h>
 
-1562429450 c:\mingw\include\malloc.h
+1512587389 c:\mingw\include\malloc.h
+	<_mingw.h>
 	<stdlib.h>
-	"alloca.h"
 
-1562429450 c:\mingw\include\memory.h
+1512587389 c:\mingw\include\memory.h
 	<string.h>
 
-1562429450 c:\mingw\include\string.h
+1512587389 c:\mingw\include\string.h
 	<_mingw.h>
 	<stddef.h>
 	<strings.h>
 	"strings.h"
 	"wchar.h"
 
-1562429450 c:\mingw\include\strings.h
+1512587389 c:\mingw\include\strings.h
 	<_mingw.h>
 	<stddef.h>
 
-1562429450 c:\mingw\include\wchar.h
+1512587389 c:\mingw\include\wchar.h
 	<_mingw.h>
 	<wctype.h>
 	<sys/types.h>
@@ -138,58 +136,56 @@
 	"stdlib.h"
 	"direct.h"
 	"sys/stat.h"
-	"conio.h"
 	"io.h"
 	"time.h"
 	"locale.h"
 	"process.h"
 
-1562429450 c:\mingw\include\wctype.h
+1512587389 c:\mingw\include\wctype.h
 	<_mingw.h>
 	<stddef.h>
 
-1562429450 c:\mingw\include\direct.h
+1512587389 c:\mingw\include\direct.h
 	"dos.h"
 
-1562429450 c:\mingw\include\dos.h
+1512587389 c:\mingw\include\dos.h
 	"io.h"
 
-1562429450 c:\mingw\include\io.h
+1512587389 c:\mingw\include\io.h
 	<_mingw.h>
 	<sys/types.h>
 	"stdint.h"
 
-1562429450 c:\mingw\include\stdint.h
+1512587389 c:\mingw\include\stdint.h
 	<_mingw.h>
 	<stddef.h>
 
-1562429450 c:\mingw\include\sys\stat.h
+1512587389 c:\mingw\include\sys\stat.h
 	<sys/types.h>
 
-1562429450 c:\mingw\include\conio.h
+1512587389 c:\mingw\include\conio.h
 	<_mingw.h>
-	<stddef.h>
 
-1562429450 c:\mingw\include\time.h
+1512587389 c:\mingw\include\time.h
 	<sys/types.h>
 	<_mingw.h>
 	<stddef.h>
 
-1562429450 c:\mingw\include\process.h
+1512587389 c:\mingw\include\process.h
 	<_mingw.h>
 	<sys/types.h>
 	"stdint.h"
 
-1562429450 c:\mingw\include\inttypes.h
+1512587389 c:\mingw\include\inttypes.h
 	<_mingw.h>
 	<stdint.h>
 	<stddef.h>
 
-1562429450 c:\mingw\include\ctype.h
+1512587389 c:\mingw\include\ctype.h
 	<_mingw.h>
 	"wctype.h"
 
-1475678472 c:\mingw\include\iconv.h
+1377999547 c:\mingw\include\iconv.h
 	"iconv.h"
 	<stddef.h>
 	<errno.h>
@@ -198,7 +194,7 @@
 	<time.h>
 	<wchar.h>
 
-1562429450 c:\mingw\include\errno.h
+1512587389 c:\mingw\include\errno.h
 	<_mingw.h>
 	"ptw32_errno.h"
 
@@ -352,7 +348,7 @@
 	"map/map_editor.h"
 	"event_editor.h"
 
-1562429462 c:\mingw\include\windows.h
+1512587401 c:\mingw\include\windows.h
 	<winresrc.h>
 	<stdarg.h>
 	<windef.h>
@@ -378,10 +374,10 @@
 	<winperf.h>
 	<commdlg.h>
 	<winspool.h>
-	"winsock.h"
+	"_winsock.h"
 	<ole2.h>
 
-1562429462 c:\mingw\include\winresrc.h
+1512587401 c:\mingw\include\winresrc.h
 	<winuser.h>
 	<winnt.h>
 	<winver.h>
@@ -389,17 +385,17 @@
 	<dlgs.h>
 	<commctrl.h>
 
-1562429462 c:\mingw\include\winuser.h
+1512587401 c:\mingw\include\winuser.h
 	<windef.h>
 	<wingdi.h>
 	<stdarg.h>
 	<dbt.h>
 
-1562429462 c:\mingw\include\windef.h
+1512587401 c:\mingw\include\windef.h
 	<w32api.h>
 	<winnt.h>
 
-1562429462 c:\mingw\include\winnt.h
+1512587401 c:\mingw\include\winnt.h
 	<windef.h>
 	<winerror.h>
 	<string.h>
@@ -407,67 +403,60 @@
 	<pshpack4.h>
 	<poppack.h>
 
-1562429462 c:\mingw\include\winerror.h
+1512587401 c:\mingw\include\winerror.h
 
-1562429462 c:\mingw\include\basetsd.h
+1512587401 c:\mingw\include\basetsd.h
 
-1562429462 c:\mingw\include\pshpack4.h
+1512587401 c:\mingw\include\pshpack4.h
 
-1562429462 c:\mingw\include\poppack.h
+1512587401 c:\mingw\include\poppack.h
 
-1562429462 c:\mingw\include\wingdi.h
+1512587401 c:\mingw\include\wingdi.h
 	<windef.h>
 
-1562429462 c:\mingw\include\dbt.h
+1512587401 c:\mingw\include\dbt.h
 	<windef.h>
 
-1562429462 c:\mingw\include\winver.h
-	<windef.h>
+1512587401 c:\mingw\include\winver.h
 
-1562429462 c:\mingw\include\dde.h
+1512587401 c:\mingw\include\dde.h
 
-1562429462 c:\mingw\include\dlgs.h
+1512587401 c:\mingw\include\dlgs.h
 
-1562429462 c:\mingw\include\commctrl.h
-	<winbase.h>
+1512587401 c:\mingw\include\commctrl.h
 	<prsht.h>
 
-1562429462 c:\mingw\include\winbase.h
+1512587401 c:\mingw\include\winbase.h
 	<stdarg.h>
 	<windef.h>
 
-1562429462 c:\mingw\include\prsht.h
-	<winuser.h>
+1512587401 c:\mingw\include\prsht.h
 
-1562429462 c:\mingw\include\wincon.h
-	<windef.h>
-	<wingdi.h>
+1512587401 c:\mingw\include\wincon.h
 
-1562429462 c:\mingw\include\winnls.h
+1512587401 c:\mingw\include\winnls.h
 
-1562429462 c:\mingw\include\winnetwk.h
+1512587401 c:\mingw\include\winnetwk.h
 
-1562429462 c:\mingw\include\winreg.h
-	<winbase.h>
-	<reason.h>
+1512587401 c:\mingw\include\winreg.h
 
 1562429462 c:\mingw\include\reason.h
 
-1562429462 c:\mingw\include\winsvc.h
+1512587401 c:\mingw\include\winsvc.h
 
-1562429462 c:\mingw\include\cderr.h
+1512587401 c:\mingw\include\cderr.h
 
-1562429462 c:\mingw\include\ddeml.h
+1512587401 c:\mingw\include\ddeml.h
 
-1562429462 c:\mingw\include\imm.h
+1512587401 c:\mingw\include\imm.h
 
-1562429462 c:\mingw\include\lzexpand.h
+1512587401 c:\mingw\include\lzexpand.h
 
-1562429462 c:\mingw\include\mmsystem.h
+1512587401 c:\mingw\include\mmsystem.h
 
-1562429462 c:\mingw\include\nb30.h
+1512587401 c:\mingw\include\nb30.h
 
-1562429462 c:\mingw\include\rpc.h
+1512587401 c:\mingw\include\rpc.h
 	<windows.h>
 	<rpcdce.h>
 	<rpcnsi.h>
@@ -475,87 +464,85 @@
 	<winerror.h>
 	<excpt.h>
 
-1562429462 c:\mingw\include\rpcdce.h
+1512587401 c:\mingw\include\rpcdce.h
 	<basetyps.h>
 	<rpcdcep.h>
 
-1562429462 c:\mingw\include\basetyps.h
+1512587401 c:\mingw\include\basetyps.h
 
-1562429462 c:\mingw\include\rpcdcep.h
+1512587401 c:\mingw\include\rpcdcep.h
 
-1562429462 c:\mingw\include\rpcnsi.h
+1512587401 c:\mingw\include\rpcnsi.h
 
-1562429462 c:\mingw\include\rpcnterr.h
+1512587401 c:\mingw\include\rpcnterr.h
 
-1562429450 c:\mingw\include\excpt.h
+1512587389 c:\mingw\include\excpt.h
 	<_mingw.h>
 	<windef.h>
 
-1562429462 c:\mingw\include\shellapi.h
+1512587401 c:\mingw\include\shellapi.h
 	<pshpack2.h>
 	<poppack.h>
 
-1562429462 c:\mingw\include\pshpack2.h
+1512587401 c:\mingw\include\pshpack2.h
 
-1562429462 c:\mingw\include\winperf.h
+1512587401 c:\mingw\include\winperf.h
 
-1562429462 c:\mingw\include\commdlg.h
+1512587401 c:\mingw\include\commdlg.h
 	<unknwn.h>
 	<prsht.h>
 
-1562429462 c:\mingw\include\unknwn.h
+1512587401 c:\mingw\include\unknwn.h
 	<windows.h>
 	<objfwd.h>
 	<wtypes.h>
 
-1562429462 c:\mingw\include\objfwd.h
+1512587401 c:\mingw\include\objfwd.h
 	<basetyps.h>
 
-1562429462 c:\mingw\include\wtypes.h
+1512587401 c:\mingw\include\wtypes.h
 	<rpc.h>
 	<rpcndr.h>
 
-1562429462 c:\mingw\include\rpcndr.h
+1512587401 c:\mingw\include\rpcndr.h
 	<rpcnsip.h>
 	<objfwd.h>
 
-1562429462 c:\mingw\include\rpcnsip.h
+1512587401 c:\mingw\include\rpcnsip.h
 
-1562429462 c:\mingw\include\winspool.h
+1512587401 c:\mingw\include\winspool.h
 
-1562429462 c:\mingw\include\winsock.h
-	<sdkddkver.h>
-	"winsock2.h"
+1512587401 c:\mingw\include\winsock.h
 	<windows.h>
 	<winerror.h>
 	<sys/bsdtypes.h>
 	<sys/time.h>
 	<mswsock.h>
 
-1562429462 c:\mingw\include\winsock2.h
+1512587401 c:\mingw\include\winsock2.h
 	"winsock.h"
 	"nspapi.h"
 
-1562429462 c:\mingw\include\nspapi.h
-	"winsock.h"
+1512587401 c:\mingw\include\nspapi.h
+	"_winsock.h"
 	"wtypes.h"
 
-1562429450 c:\mingw\include\sys\bsdtypes.h
+1512587389 c:\mingw\include\sys\bsdtypes.h
 	<_mingw.h>
 
-1562429450 c:\mingw\include\sys\time.h
+1512587389 c:\mingw\include\sys\time.h
 	<time.h>
 
-1562429462 c:\mingw\include\mswsock.h
+1512587401 c:\mingw\include\mswsock.h
 
-1562429462 c:\mingw\include\ole2.h
+1512587401 c:\mingw\include\ole2.h
 	<winerror.h>
 	<objbase.h>
 	<olectlid.h>
 	<oleauto.h>
 	<oleidl.h>
 
-1562429462 c:\mingw\include\objbase.h
+1512587401 c:\mingw\include\objbase.h
 	<rpc.h>
 	<rpcndr.h>
 	<stdlib.h>
@@ -565,21 +552,21 @@
 	<objidl.h>
 	<cguid.h>
 
-1562429462 c:\mingw\include\objidl.h
+1512587401 c:\mingw\include\objidl.h
 	<objfwd.h>
 
-1562429462 c:\mingw\include\cguid.h
+1512587401 c:\mingw\include\cguid.h
 
-1562429462 c:\mingw\include\olectlid.h
+1512587401 c:\mingw\include\olectlid.h
 
-1562429462 c:\mingw\include\oleauto.h
+1512587401 c:\mingw\include\oleauto.h
 	<oaidl.h>
 
-1562429462 c:\mingw\include\oaidl.h
+1512587401 c:\mingw\include\oaidl.h
 	<windows.h>
 	<ole2.h>
 
-1562429462 c:\mingw\include\oleidl.h
+1512587401 c:\mingw\include\oleidl.h
 	<objfwd.h>
 
 1572540442 c:\users\anthony\desktop\morstairs_project\map_editor\tinyfiledialogs\tinyfiledialogs.h
@@ -600,27 +587,27 @@
 	<termios.h>
 	<sys/utsname.h>
 
-1562429462 c:\mingw\include\shlobj.h
+1512587401 c:\mingw\include\shlobj.h
 	<ole2.h>
 	<shlguid.h>
 	<shellapi.h>
 	<commctrl.h>
 
-1562429462 c:\mingw\include\shlguid.h
+1512587401 c:\mingw\include\shlguid.h
 
-1562429450 c:\mingw\include\limits.h
+1512587389 c:\mingw\include\limits.h
 	<_mingw.h>
 
-1562429450 c:\mingw\include\unistd.h
+1512587389 c:\mingw\include\unistd.h
 	<_mingw.h>
 	"io.h"
 	"process.h"
 	"getopt.h"
 
-1562429450 c:\mingw\include\getopt.h
+1512587389 c:\mingw\include\getopt.h
 	<_mingw.h>
 
-1562429450 c:\mingw\include\dirent.h
+1512587389 c:\mingw\include\dirent.h
 	<_mingw.h>
 	<io.h>
 
@@ -641,6 +628,67 @@
 	"map/map_editor.h"
 	<libgen.h>
 
-1562429450 c:\mingw\include\libgen.h
+1512587389 c:\mingw\include\libgen.h
 	<_mingw.h>
+
+1646070350 source:c:\users\areyb\desktop\morstairs-dc\map_editor\tinyfiledialogs\tinyfiledialogs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<sys/stat.h>
+	"tinyfiledialogs.h"
+	<windows.h>
+	<shlobj.h>
+	<conio.h>
+	<limits.h>
+	<unistd.h>
+	<dirent.h>
+	<termios.h>
+	<sys/utsname.h>
+
+1646070350 c:\users\areyb\desktop\morstairs-dc\map_editor\tinyfiledialogs\tinyfiledialogs.h
+
+1512587401 c:\mingw\include\_winsock.h
+	<sdkddkver.h>
+	<winsock2.h>
+	<winsock.h>
+
+1646070350 source:c:\users\areyb\desktop\morstairs-dc\morstairs\map\map.c
+	"map.h"
+
+1646070350 c:\users\areyb\desktop\morstairs-dc\morstairs\map\map.h
+	"SDL/SDL.h"
+
+1646070350 source:c:\users\areyb\desktop\morstairs-dc\morstairs\text\text.c
+	"text.h"
+
+1646070350 c:\users\areyb\desktop\morstairs-dc\morstairs\text\text.h
+	"SDL/SDL.h"
+
+1646320781 source:c:\users\areyb\desktop\morstairs-dc\map_editor\event_editor.c
+	"event_editor.h"
+
+1646319573 c:\users\areyb\desktop\morstairs-dc\map_editor\event_editor.h
+	"../morstairs/map/map.h"
+	"map/map_editor.h"
+	<libgen.h>
+
+1646070350 c:\users\areyb\desktop\morstairs-dc\map_editor\map\map_editor.h
+	"../../morstairs/map/map.h"
+
+1646070350 source:c:\users\areyb\desktop\morstairs-dc\map_editor\map\map_editor.c
+	"map_editor.h"
+
+1646317196 source:c:\users\areyb\desktop\morstairs-dc\map_editor\main.c
+	"main.h"
+
+1646317205 c:\users\areyb\desktop\morstairs-dc\map_editor\main.h
+	<stdlib.h>
+	<SDL/SDL.h>
+	<string.h>
+	"tinyfiledialogs/tinyfiledialogs.h"
+	"../morstairs/text/text.h"
+	"map/map_editor.h"
+	"event_editor.h"
 

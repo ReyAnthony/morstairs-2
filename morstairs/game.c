@@ -37,7 +37,7 @@ int GAME_init_engine() {
     }
 
     MAP_extends_with_submodule(EVENTS_submodule_initializer);
-    MAP_extends_with_submodule(FOV_submodule_initializer);
+    //MAP_extends_with_submodule(FOV_submodule_initializer);
     return SUCCESS;
 }
 

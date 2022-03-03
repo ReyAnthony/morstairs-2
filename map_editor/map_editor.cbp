@@ -36,7 +36,7 @@
 		<Linker>
 			<Add library="mingw32" />
 			<Add library="SDLmain" />
-			<Add library="SDL.dll" />
+			<Add library="SDL" />
 			<Add library="user32" />
 			<Add library="gdi32" />
 			<Add library="winmm" />
@@ -47,7 +47,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../morstairs/map/map.h" />
-		<Unit filename="../morstairs/map/map_submodule.h" />
 		<Unit filename="../morstairs/text/text.c">
 			<Option compilerVar="CC" />
 		</Unit>

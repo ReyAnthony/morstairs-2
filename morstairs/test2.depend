@@ -169,3 +169,72 @@
 1572974684 source:c:\users\anthony\desktop\morstairs_project\morstairs\fov\fov.c
 	"fov.h"
 
+1646070350 source:c:\users\areyb\desktop\morstairs-dc\morstairs\audio\audio.c
+	"audio.h"
+
+1646070350 c:\users\areyb\desktop\morstairs-dc\morstairs\audio\audio.h
+	<kos.h>
+	<oggvorbis/sndoggvorbis.h>
+	<SDL/SDL.h>
+	<SDL/SDL_mixer.h>
+	<string.h>
+
+1646070350 source:c:\users\areyb\desktop\morstairs-dc\morstairs\fov\fov.c
+	"fov.h"
+
+1646070350 c:\users\areyb\desktop\morstairs-dc\morstairs\fov\fov.h
+	"../map/map.h"
+
+1646070350 c:\users\areyb\desktop\morstairs-dc\morstairs\map\map.h
+	"SDL/SDL.h"
+
+1646316185 source:c:\users\areyb\desktop\morstairs-dc\morstairs\game.c
+	"game.h"
+
+1646070350 c:\users\areyb\desktop\morstairs-dc\morstairs\game.h
+	<stdio.h>
+	<stdlib.h>
+	"SDL/SDL.h"
+	"paths.h"
+	"constants.h"
+	"game_events.h"
+	"audio/audio.h"
+	"fov/fov.h"
+	"text/text.h"
+	"map/map.h"
+
+1646315974 c:\users\areyb\desktop\morstairs-dc\morstairs\paths.h
+
+1646070350 c:\users\areyb\desktop\morstairs-dc\morstairs\constants.h
+
+1646070350 c:\users\areyb\desktop\morstairs-dc\morstairs\game_events.h
+	"map/map.h"
+	"paths.h"
+	"constants.h"
+	"audio/audio.h"
+
+1646070350 c:\users\areyb\desktop\morstairs-dc\morstairs\text\text.h
+	"SDL/SDL.h"
+
+1646318465 source:c:\users\areyb\desktop\morstairs-dc\morstairs\game_events.c
+	"game_events.h"
+	"game_event_codegen.h"
+	"event_editor_gen.inc.h"
+
+1646318476 c:\users\areyb\desktop\morstairs-dc\morstairs\game_event_codegen.h
+
+1646320721 c:\users\areyb\desktop\morstairs-dc\morstairs\event_editor_gen.inc.h
+
+1646316446 source:c:\users\areyb\desktop\morstairs-dc\morstairs\main.c
+	<kos.h>
+	<arch/arch.h>
+	<arch/gdb.h>
+	"game.h"
+	<time.h>
+
+1646070350 source:c:\users\areyb\desktop\morstairs-dc\morstairs\map\map.c
+	"map.h"
+
+1646070350 source:c:\users\areyb\desktop\morstairs-dc\morstairs\text\text.c
+	"text.h"
+

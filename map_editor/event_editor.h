@@ -5,6 +5,8 @@
 #include "map/map_editor.h"
 #include <libgen.h>
 
+#define CODEGEN_FILE_EVENTS_H "../morstairs/event_editor_gen.inc.h"
+
 MAP_SubmoduleDelegation EVENTED_submodule_initializer(MAP_SubmodulePackage submod);
 void EVENTED_load_file(char* file);
 int EVENTED_is_destination_selection_phase();

@@ -25,7 +25,7 @@ int main ( int argc, char** argv )
     SDL_ShowCursor(0);
     SDL_putenv("SDL_VIDEO_WINDOW_POS=center");
 
-    if(!TEXT_init("data/font.bmp", 16, 16)) {
+    if(!TEXT_init(FONTSET, 16, 16)) {
         return EXIT_FAILURE;
     }
 
@@ -34,7 +34,7 @@ int main ( int argc, char** argv )
         exit(-1);
     }
 
-    if(!MAP_init("data/ultima.bmp", open_file, COL_IN, ANIM_IN, 64,  WIDTH, HEIGHT)) {
+    if(!MAP_init(TILESET, open_file, COL_IN, ANIM_IN, 64,  WIDTH, HEIGHT)) {
         return EXIT_FAILURE;
     }
     MAP_extends_with_submodule(MAPED_submodule_initializer);
@@ -45,7 +45,7 @@ int main ( int argc, char** argv )
     atexit(SDL_Quit);
     SDL_Surface* screen = SDL_SetVideoMode(WIDTH, HEIGHT, 16, SDL_HWSURFACE|SDL_DOUBLEBUF);
     SDL_Rect message_pos = {.x = 0, .y = HEIGHT - 64};
-    SDL_Rect help_pos = {.x = WIDTH - 400, .y = HEIGHT - 240};
+    SDL_Rect help_pos = {.x = WIDTH - 400, .y = HEIGHT - 300};
 
     int done = 0;
     while (!done)
